@@ -1,0 +1,10 @@
+C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\obj\Debug\InventoryProgram.csprojAssemblyReference.cache
+C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\obj\Debug\InventoryProgram.Form1.resources
+C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\obj\Debug\InventoryProgram.AddPartForm.resources
+C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\obj\Debug\InventoryProgram.Properties.Resources.resources
+C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\obj\Debug\InventoryProgram.csproj.GenerateResource.cache
+C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\bin\Debug\InventoryProgram.exe.config
+C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\bin\Debug\InventoryProgram.exe
+C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\bin\Debug\InventoryProgram.pdb
+C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\obj\Debug\InventoryProgram.exe
+C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\obj\Debug\InventoryProgram.pdb
