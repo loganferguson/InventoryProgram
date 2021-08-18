@@ -16,5 +16,27 @@ namespace InventoryProgram
         {
             InitializeComponent();
         }
+
+        private void rdInHouse_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdInHouse.Checked)
+            {
+                tbMachineID.Visible = true;
+                lbMachineID.Visible = true;
+                tbCompanyName.Visible = false;
+                lbCompanyName.Visible = false;
+            }
+        }
+
+        private void rdOutsourced_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdOutsourced.Checked)
+            {
+                tbCompanyName.Visible = true;
+                lbCompanyName.Visible = true;
+                tbMachineID.Visible = false;
+                lbMachineID.Visible = false;
+            }
+        }
     }
 }
