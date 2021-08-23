@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventoryProgram
 {
-    class Part
+    public class Part
     {
         public int PartID { get; set; }
         public string PartName { get; set; }

@@ -45,8 +45,8 @@
             this.lbMachineID = new System.Windows.Forms.Label();
             this.rdInHouse = new System.Windows.Forms.RadioButton();
             this.rdOutsourced = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btSavePart = new System.Windows.Forms.Button();
+            this.btCancelAddPart = new System.Windows.Forms.Button();
             this.tbCompanyName = new System.Windows.Forms.TextBox();
             this.lbCompanyName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -202,23 +202,25 @@
             this.rdOutsourced.UseVisualStyleBackColor = true;
             this.rdOutsourced.CheckedChanged += new System.EventHandler(this.rdOutsourced_CheckedChanged);
             // 
-            // button1
+            // btSavePart
             // 
-            this.button1.Location = new System.Drawing.Point(153, 389);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 34);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btSavePart.Location = new System.Drawing.Point(153, 389);
+            this.btSavePart.Name = "btSavePart";
+            this.btSavePart.Size = new System.Drawing.Size(92, 34);
+            this.btSavePart.TabIndex = 17;
+            this.btSavePart.Text = "Save";
+            this.btSavePart.UseVisualStyleBackColor = true;
+            this.btSavePart.Click += new System.EventHandler(this.btSavePart_Click);
             // 
-            // button2
+            // btCancelAddPart
             // 
-            this.button2.Location = new System.Drawing.Point(268, 389);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 34);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btCancelAddPart.Location = new System.Drawing.Point(268, 389);
+            this.btCancelAddPart.Name = "btCancelAddPart";
+            this.btCancelAddPart.Size = new System.Drawing.Size(87, 34);
+            this.btCancelAddPart.TabIndex = 18;
+            this.btCancelAddPart.Text = "Cancel";
+            this.btCancelAddPart.UseVisualStyleBackColor = true;
+            this.btCancelAddPart.Click += new System.EventHandler(this.btCancelAddPart_Click);
             // 
             // tbCompanyName
             // 
@@ -251,14 +253,15 @@
             // 
             // AddPartForm
             // 
+            this.AccessibleName = "AddPartForm";
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 496);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbCompanyName);
             this.Controls.Add(this.tbCompanyName);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btCancelAddPart);
+            this.Controls.Add(this.btSavePart);
             this.Controls.Add(this.lbMachineID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -302,8 +305,8 @@
         private System.Windows.Forms.Label lbMachineID;
         private System.Windows.Forms.RadioButton rdInHouse;
         private System.Windows.Forms.RadioButton rdOutsourced;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btSavePart;
+        private System.Windows.Forms.Button btCancelAddPart;
         private System.Windows.Forms.TextBox tbCompanyName;
         private System.Windows.Forms.Label lbCompanyName;
         private System.Windows.Forms.GroupBox groupBox1;

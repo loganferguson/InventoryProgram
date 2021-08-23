@@ -10,13 +10,18 @@ using System.Windows.Forms;
 
 namespace InventoryProgram
 {
+    
     public partial class AddPartForm : Form
     {
-        public AddPartForm()
+        public mainForm mainform;
+
+        public AddPartForm(mainForm main)
         {
             InitializeComponent();
+            mainform = main;
         }
 
+        // RADIO BUTTON SWITCH VIEW //
         private void rdInHouse_CheckedChanged(object sender, EventArgs e)
         {
             if (rdInHouse.Checked)
@@ -32,11 +37,78 @@ namespace InventoryProgram
         {
             if (rdOutsourced.Checked)
             {
-                tbCompanyName.Visible = true;
-                lbCompanyName.Visible = true;
-                tbMachineID.Visible = false;
-                lbMachineID.Visible = false;
+                tbCompanyName.Visible = true; //text box
+                lbCompanyName.Visible = true; //label
+                tbMachineID.Visible = false;  //text box
+                lbMachineID.Visible = false;  //label
             }
+        }
+
+
+        // SUBMIT ADD PART FORM //
+        private void btSavePart_Click(object sender, EventArgs e)
+        {
+
+            if (String.IsNullOrEmpty(tbPartName.Text) ||
+                String.IsNullOrEmpty(tbPriceCost.Text) ||
+                String.IsNullOrEmpty(tbMin.Text) ||
+                String.IsNullOrEmpty(tbMax.Text) ||
+                String.IsNullOrEmpty(tbInventory.Text)
+                )
+            {
+                MessageBox.Show("One or more fields were not completed.");
+                return;
+            }
+
+            //Converting string values to decimal/int.
+
+            decimal partPrice = decimal.Parse(tbPriceCost.Text); //Price
+            int partMin = int.Parse(tbMin.Text); //Min
+            int partMax = int.Parse(tbMax.Text); //Max
+            int partInventory = int.Parse(tbInventory.Text); //Inventory
+
+
+            //Checking if InHouse part.
+
+            if (rdInHouse.Checked)
+            {
+
+                Inventory inventory = new Inventory();
+                inventory.AllParts = new List<Part>();
+
+                Inhouse inhousePart = new Inhouse();
+
+                inhousePart.PartID = inventory.AllParts.Count + 1;
+                inhousePart.PartName = tbPartName.Text;
+                inhousePart.Price = partPrice;
+                inhousePart.Min = partMin;
+                inhousePart.Max = partMax;
+                inhousePart.InStock = partInventory;
+                int machine = int.Parse(tbMachineID.Text);
+                inhousePart.MachineID = machine;
+
+                inventory.AllParts.Add(inhousePart);
+
+                object[] row = new object[]
+                {
+                    inhousePart.PartID.ToString(),
+                    inhousePart.PartName,
+                    inhousePart.InStock.ToString(),
+                    inhousePart.Price.ToString(),
+                    inhousePart.Min.ToString(),
+                    inhousePart.Max.ToString()
+                };
+
+                mainform.dgvParts.Rows.Add(row);
+                this.Close();
+            }
+
+
+        }
+
+        private void btCancelAddPart_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
