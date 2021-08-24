@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace InventoryProgram
 {
-    class Inventory
+    public static class Inventory
     {
-        public List<Part> AllParts { get; set; }
-        public List<Product> Products { get; set; }
+        public static List<Part> AllParts = new List<Part>();
+        static List<Product> Products { get; set; }
     }
 }

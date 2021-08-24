@@ -73,12 +73,15 @@ namespace InventoryProgram
             if (rdInHouse.Checked)
             {
 
-                Inventory inventory = new Inventory();
-                inventory.AllParts = new List<Part>();
-
                 Inhouse inhousePart = new Inhouse();
-
-                inhousePart.PartID = inventory.AllParts.Count + 1;
+                if (Inventory.AllParts == null)
+                {
+                    inhousePart.PartID = 1;
+                }
+                else
+                {
+                    inhousePart.PartID = Inventory.AllParts.Count + 1;
+                }
                 inhousePart.PartName = tbPartName.Text;
                 inhousePart.Price = partPrice;
                 inhousePart.Min = partMin;
@@ -87,7 +90,7 @@ namespace InventoryProgram
                 int machine = int.Parse(tbMachineID.Text);
                 inhousePart.MachineID = machine;
 
-                inventory.AllParts.Add(inhousePart);
+                Inventory.AllParts.Add(inhousePart);
 
                 object[] row = new object[]
                 {
