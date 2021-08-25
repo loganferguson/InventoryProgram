@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tbPartSearch = new System.Windows.Forms.TextBox();
+            this.SearchPartButton = new System.Windows.Forms.Button();
             this.dgvParts = new System.Windows.Forms.DataGridView();
             this.AddPartButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,21 +53,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.allPartsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbPartSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(486, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 22);
-            this.textBox1.TabIndex = 0;
+            this.tbPartSearch.Location = new System.Drawing.Point(486, 40);
+            this.tbPartSearch.Name = "tbPartSearch";
+            this.tbPartSearch.Size = new System.Drawing.Size(213, 22);
+            this.tbPartSearch.TabIndex = 0;
             // 
-            // button1
+            // SearchPartButton
             // 
-            this.button1.Location = new System.Drawing.Point(705, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SearchPartButton.Location = new System.Drawing.Point(705, 39);
+            this.SearchPartButton.Name = "SearchPartButton";
+            this.SearchPartButton.Size = new System.Drawing.Size(75, 23);
+            this.SearchPartButton.TabIndex = 1;
+            this.SearchPartButton.Text = "Search";
+            this.SearchPartButton.UseVisualStyleBackColor = true;
+            this.SearchPartButton.Click += new System.EventHandler(this.SearchPartButton_Click);
             // 
             // dgvParts
             // 
@@ -235,8 +236,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AddPartButton);
             this.Controls.Add(this.dgvParts);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SearchPartButton);
+            this.Controls.Add(this.tbPartSearch);
             this.Name = "mainForm";
             this.Text = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).EndInit();
@@ -249,8 +250,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tbPartSearch;
+        private System.Windows.Forms.Button SearchPartButton;
         private System.Windows.Forms.Button AddPartButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
