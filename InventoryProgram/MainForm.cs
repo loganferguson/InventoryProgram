@@ -11,12 +11,12 @@ using System.Windows.Forms;
 namespace InventoryProgram
 {
     public partial class mainForm : Form
-    {
-        
+    { 
         public mainForm()
         {
             InitializeComponent();
-            InitializeDataGridView();
+            InitializePartDataGridView();
+            InitializeProductDataGridView();
         }
 
         private void AddPartButton_Click(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace InventoryProgram
             form.Show();
         }
 
-        public void InitializeDataGridView()
+        public void InitializePartDataGridView()
         {
             dgvParts.ColumnCount = 6;
             dgvParts.ColumnHeadersVisible = true;
@@ -38,6 +38,20 @@ namespace InventoryProgram
             dgvParts.Columns[4].Name = "Min";
             dgvParts.Columns[5].Name = "Max";
 
+        }
+
+        public void InitializeProductDataGridView()
+        {
+            dgvProducts.ColumnCount = 6;
+            dgvProducts.ColumnHeadersVisible = true;
+            dgvProducts.ReadOnly = true;
+
+            dgvProducts.Columns[0].Name = "PartID";
+            dgvProducts.Columns[1].Name = "Name";
+            dgvProducts.Columns[2].Name = "Inventory";
+            dgvProducts.Columns[3].Name = "Price";
+            dgvProducts.Columns[4].Name = "Min";
+            dgvProducts.Columns[5].Name = "Max";
         }
 
         public void SearchPartButton_Click(object sender, EventArgs e)

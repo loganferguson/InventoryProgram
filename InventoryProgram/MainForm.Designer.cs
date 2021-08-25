@@ -37,12 +37,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -122,67 +116,12 @@
             // dgvProducts
             // 
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProductID,
-            this.ProductName,
-            this.ProductInventory,
-            this.ProductPrice,
-            this.ProductMin,
-            this.ProductMax});
             this.dgvProducts.Location = new System.Drawing.Point(33, 324);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.RowHeadersWidth = 51;
             this.dgvProducts.RowTemplate.Height = 24;
             this.dgvProducts.Size = new System.Drawing.Size(751, 161);
             this.dgvProducts.TabIndex = 7;
-            // 
-            // ProductID
-            // 
-            this.ProductID.HeaderText = "Product ID";
-            this.ProductID.MinimumWidth = 6;
-            this.ProductID.Name = "ProductID";
-            this.ProductID.ReadOnly = true;
-            this.ProductID.Width = 125;
-            // 
-            // ProductName
-            // 
-            this.ProductName.HeaderText = "Product Name";
-            this.ProductName.MinimumWidth = 6;
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            this.ProductName.Width = 125;
-            // 
-            // ProductInventory
-            // 
-            this.ProductInventory.HeaderText = "Iventory";
-            this.ProductInventory.MinimumWidth = 6;
-            this.ProductInventory.Name = "ProductInventory";
-            this.ProductInventory.ReadOnly = true;
-            this.ProductInventory.Width = 125;
-            // 
-            // ProductPrice
-            // 
-            this.ProductPrice.HeaderText = "Price";
-            this.ProductPrice.MinimumWidth = 6;
-            this.ProductPrice.Name = "ProductPrice";
-            this.ProductPrice.ReadOnly = true;
-            this.ProductPrice.Width = 125;
-            // 
-            // ProductMin
-            // 
-            this.ProductMin.HeaderText = "Min";
-            this.ProductMin.MinimumWidth = 6;
-            this.ProductMin.Name = "ProductMin";
-            this.ProductMin.ReadOnly = true;
-            this.ProductMin.Width = 125;
-            // 
-            // ProductMax
-            // 
-            this.ProductMax.HeaderText = "Max";
-            this.ProductMax.MinimumWidth = 6;
-            this.ProductMax.Name = "ProductMax";
-            this.ProductMax.ReadOnly = true;
-            this.ProductMax.Width = 125;
             // 
             // Label2
             // 
@@ -257,12 +196,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dgvProducts;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductInventory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductMin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductMax;
         private System.Windows.Forms.Label Label2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
