@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbPartSearch = new System.Windows.Forms.TextBox();
             this.SearchPartButton = new System.Windows.Forms.Button();
             this.dgvParts = new System.Windows.Forms.DataGridView();
@@ -38,10 +41,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.Label2 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.AddProductButton = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.allPartsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ProductSearchButton = new System.Windows.Forms.Button();
+            this.tbProductSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.allPartsBindingSource)).BeginInit();
@@ -66,14 +71,39 @@
             // 
             // dgvParts
             // 
+            this.dgvParts.AllowUserToAddRows = false;
             this.dgvParts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvParts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvParts.Location = new System.Drawing.Point(33, 80);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvParts.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvParts.Location = new System.Drawing.Point(23, 80);
             this.dgvParts.Name = "dgvParts";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvParts.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvParts.RowHeadersVisible = false;
             this.dgvParts.RowHeadersWidth = 51;
             this.dgvParts.RowTemplate.Height = 24;
-            this.dgvParts.Size = new System.Drawing.Size(751, 161);
+            this.dgvParts.Size = new System.Drawing.Size(761, 161);
             this.dgvParts.TabIndex = 2;
             // 
             // AddPartButton
@@ -89,7 +119,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Stencil", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 39);
+            this.label1.Location = new System.Drawing.Point(27, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 39);
             this.label1.TabIndex = 4;
@@ -116,31 +146,33 @@
             // dgvProducts
             // 
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(33, 324);
+            this.dgvProducts.Location = new System.Drawing.Point(23, 324);
             this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.RowHeadersVisible = false;
             this.dgvProducts.RowHeadersWidth = 51;
             this.dgvProducts.RowTemplate.Height = 24;
-            this.dgvProducts.Size = new System.Drawing.Size(751, 161);
+            this.dgvProducts.Size = new System.Drawing.Size(761, 161);
             this.dgvProducts.TabIndex = 7;
             // 
             // Label2
             // 
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Stencil", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.Location = new System.Drawing.Point(36, 279);
+            this.Label2.Location = new System.Drawing.Point(27, 279);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(157, 33);
             this.Label2.TabIndex = 8;
             this.Label2.Text = "Products";
             // 
-            // button4
+            // AddProductButton
             // 
-            this.button4.Location = new System.Drawing.Point(813, 324);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 44);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = true;
+            this.AddProductButton.Location = new System.Drawing.Point(813, 324);
+            this.AddProductButton.Name = "AddProductButton";
+            this.AddProductButton.Size = new System.Drawing.Size(90, 44);
+            this.AddProductButton.TabIndex = 9;
+            this.AddProductButton.Text = "Add";
+            this.AddProductButton.UseVisualStyleBackColor = true;
+            this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
             // 
             // button5
             // 
@@ -160,14 +192,32 @@
             this.button6.Text = "Delete";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // ProductSearchButton
+            // 
+            this.ProductSearchButton.Location = new System.Drawing.Point(705, 288);
+            this.ProductSearchButton.Name = "ProductSearchButton";
+            this.ProductSearchButton.Size = new System.Drawing.Size(75, 23);
+            this.ProductSearchButton.TabIndex = 12;
+            this.ProductSearchButton.Text = "Search";
+            this.ProductSearchButton.UseVisualStyleBackColor = true;
+            // 
+            // tbProductSearch
+            // 
+            this.tbProductSearch.Location = new System.Drawing.Point(486, 288);
+            this.tbProductSearch.Name = "tbProductSearch";
+            this.tbProductSearch.Size = new System.Drawing.Size(213, 22);
+            this.tbProductSearch.TabIndex = 13;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 559);
+            this.Controls.Add(this.tbProductSearch);
+            this.Controls.Add(this.ProductSearchButton);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.AddProductButton);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.dgvProducts);
             this.Controls.Add(this.button3);
@@ -197,11 +247,13 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.Label Label2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button AddProductButton;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.BindingSource allPartsBindingSource;
         public System.Windows.Forms.DataGridView dgvParts;
+        private System.Windows.Forms.Button ProductSearchButton;
+        private System.Windows.Forms.TextBox tbProductSearch;
     }
 }
 

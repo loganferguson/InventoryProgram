@@ -27,16 +27,21 @@ namespace InventoryProgram
 
         public void InitializePartDataGridView()
         {
-            dgvParts.ColumnCount = 6;
-            dgvParts.ColumnHeadersVisible = true;
-            dgvParts.ReadOnly = true;
+            //dgvParts.ColumnCount = 6;
+            //dgvParts.ColumnHeadersVisible = true;
+            //dgvParts.ReadOnly = true;
 
-            dgvParts.Columns[0].Name = "PartID";
-            dgvParts.Columns[1].Name = "Name";
-            dgvParts.Columns[2].Name = "Inventory";
-            dgvParts.Columns[3].Name = "Price";
-            dgvParts.Columns[4].Name = "Min";
-            dgvParts.Columns[5].Name = "Max";
+            //dgvParts.Columns[0].Name = "PartID";
+            //dgvParts.Columns[1].Name = "Name";
+            //dgvParts.Columns[2].Name = "Inventory";
+            //dgvParts.Columns[3].Name = "Price";
+            //dgvParts.Columns[4].Name = "Min";
+            //dgvParts.Columns[5].Name = "Max";
+
+            var source = new BindingSource();
+            source.DataSource = Inventory.AllParts;
+            dgvParts.DataSource = source;
+            dgvParts.Columns[6].Visible = false;
 
         }
 
@@ -70,6 +75,12 @@ namespace InventoryProgram
                     row.Selected = true;
                 }
             }
+        }
+
+        private void AddProductButton_Click(object sender, EventArgs e)
+        {
+            AddProductForm form = new AddProductForm(this);
+            form.Show();
         }
     }
 }

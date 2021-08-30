@@ -92,17 +92,19 @@ namespace InventoryProgram
 
                 Inventory.AllParts.Add(inhousePart);
 
-                object[] row = new object[]
-                {
-                    inhousePart.PartID.ToString(),
-                    inhousePart.PartName,
-                    inhousePart.InStock.ToString(),
-                    inhousePart.Price.ToString(),
-                    inhousePart.Min.ToString(),
-                    inhousePart.Max.ToString()
-                };
+                //object[] row = new object[]
+                //{
+                //    inhousePart.PartID.ToString(),
+                //    inhousePart.PartName,
+                //    inhousePart.InStock.ToString(),
+                //    inhousePart.Price.ToString(),
+                //    inhousePart.Min.ToString(),
+                //    inhousePart.Max.ToString()
+                //};
 
-                mainform.dgvParts.Rows.Add(row);
+                //mainform.dgvParts.Rows.Add(row);
+                Console.WriteLine(Inventory.AllParts.Count);
+                mainform.InitializePartDataGridView();
                 this.Close();
             }
 
