@@ -27,36 +27,17 @@ namespace InventoryProgram
 
         public void InitializePartDataGridView()
         {
-            //dgvParts.ColumnCount = 6;
-            //dgvParts.ColumnHeadersVisible = true;
-            //dgvParts.ReadOnly = true;
-
-            //dgvParts.Columns[0].Name = "PartID";
-            //dgvParts.Columns[1].Name = "Name";
-            //dgvParts.Columns[2].Name = "Inventory";
-            //dgvParts.Columns[3].Name = "Price";
-            //dgvParts.Columns[4].Name = "Min";
-            //dgvParts.Columns[5].Name = "Max";
-
-            var source = new BindingSource();
-            source.DataSource = Inventory.AllParts;
-            dgvParts.DataSource = source;
+            var partSource = new BindingSource();
+            partSource.DataSource = Inventory.AllParts;
+            dgvParts.DataSource = partSource;
             dgvParts.Columns[6].Visible = false;
-
         }
 
         public void InitializeProductDataGridView()
         {
-            dgvProducts.ColumnCount = 6;
-            dgvProducts.ColumnHeadersVisible = true;
-            dgvProducts.ReadOnly = true;
-
-            dgvProducts.Columns[0].Name = "PartID";
-            dgvProducts.Columns[1].Name = "Name";
-            dgvProducts.Columns[2].Name = "Inventory";
-            dgvProducts.Columns[3].Name = "Price";
-            dgvProducts.Columns[4].Name = "Min";
-            dgvProducts.Columns[5].Name = "Max";
+            var productSource = new BindingSource();
+            productSource.DataSource = Inventory.Products;
+            dgvProducts.DataSource = productSource;
         }
 
         public void SearchPartButton_Click(object sender, EventArgs e)
@@ -81,6 +62,17 @@ namespace InventoryProgram
         {
             AddProductForm form = new AddProductForm(this);
             form.Show();
+        }
+
+        private void DeletePartButton_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvParts.SelectedRows)
+            {
+                string rowID = row.Cells[1].Value.ToString();
+                dgvParts.Rows.RemoveAt(row.Index);
+                //Inventory.AllParts.RemoveAll(x => x.PartID == int.Parse(row.Cells[0].Value.ToString()));
+            }
+            Console.WriteLine(Inventory.AllParts.Count);
         }
     }
 }

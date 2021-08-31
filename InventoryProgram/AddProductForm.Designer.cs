@@ -61,6 +61,8 @@
             this.dgvCandidateParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCandidateParts.Location = new System.Drawing.Point(360, 127);
             this.dgvCandidateParts.Name = "dgvCandidateParts";
+            this.dgvCandidateParts.ReadOnly = true;
+            this.dgvCandidateParts.RowHeadersVisible = false;
             this.dgvCandidateParts.RowHeadersWidth = 51;
             this.dgvCandidateParts.RowTemplate.Height = 24;
             this.dgvCandidateParts.Size = new System.Drawing.Size(653, 164);
@@ -68,9 +70,12 @@
             // 
             // dgvAssociatedParts
             // 
+            this.dgvAssociatedParts.AllowUserToAddRows = false;
             this.dgvAssociatedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAssociatedParts.Location = new System.Drawing.Point(360, 395);
             this.dgvAssociatedParts.Name = "dgvAssociatedParts";
+            this.dgvAssociatedParts.ReadOnly = true;
+            this.dgvAssociatedParts.RowHeadersVisible = false;
             this.dgvAssociatedParts.RowHeadersWidth = 51;
             this.dgvAssociatedParts.RowTemplate.Height = 24;
             this.dgvAssociatedParts.Size = new System.Drawing.Size(653, 161);

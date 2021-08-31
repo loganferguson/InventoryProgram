@@ -9,6 +9,6 @@ namespace InventoryProgram
     public static class Inventory
     {
         public static List<Part> AllParts = new List<Part>();
-        static List<Product> Products { get; set; }
+        public static List<Product> Products = new List<Product>();
     }
 }
