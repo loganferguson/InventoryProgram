@@ -66,6 +66,12 @@
     </Compile>
     <Compile Include="Inhouse.cs" />
     <Compile Include="Inventory.cs" />
+    <Compile Include="ModifyPartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyPartForm.Designer.cs">
+      <DependentUpon>ModifyPartForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Outsourced.cs" />
     <Compile Include="Part.cs" />
     <Compile Include="Product.cs" />
@@ -79,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddPartForm.resx">
       <DependentUpon>AddPartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyPartForm.resx">
+      <DependentUpon>ModifyPartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
