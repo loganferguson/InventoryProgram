@@ -89,21 +89,33 @@ namespace InventoryProgram
                 inhousePart.InStock = partInventory;
                 int machine = int.Parse(tbMachineID.Text);
                 inhousePart.MachineID = machine;
-
                 Inventory.AllParts.Add(inhousePart);
 
-                //object[] row = new object[]
-                //{
-                //    inhousePart.PartID.ToString(),
-                //    inhousePart.PartName,
-                //    inhousePart.InStock.ToString(),
-                //    inhousePart.Price.ToString(),
-                //    inhousePart.Min.ToString(),
-                //    inhousePart.Max.ToString()
-                //};
-
-                //mainform.dgvParts.Rows.Add(row);
                 Console.WriteLine(Inventory.AllParts.Count);
+                mainform.InitializePartDataGridView();
+                this.Close();
+            }
+            else if (rdOutsourced.Checked)
+            {
+                Outsourced outPart = new Outsourced();
+                if (Inventory.AllParts == null)
+                {
+                    outPart.PartID = 1;
+                }
+                else
+                {
+                    outPart.PartID = Inventory.AllParts.Count + 1;
+                }
+
+                outPart.PartName = tbPartName.Text;
+                outPart.Price = partPrice;
+                outPart.Min = partMin;
+                outPart.Max = partMax;
+                outPart.InStock = partInventory;
+                string company = tbCompanyName.Text;
+                outPart.CompanyName = company;
+
+                Inventory.AllParts.Add(outPart);
                 mainform.InitializePartDataGridView();
                 this.Close();
             }

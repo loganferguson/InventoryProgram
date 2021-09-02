@@ -30,7 +30,6 @@ namespace InventoryProgram
             var partSource = new BindingSource();
             partSource.DataSource = Inventory.AllParts;
             dgvParts.DataSource = partSource;
-            dgvParts.Columns[6].Visible = false;
         }
 
         public void InitializeProductDataGridView()
@@ -73,6 +72,27 @@ namespace InventoryProgram
                 //Inventory.AllParts.RemoveAll(x => x.PartID == int.Parse(row.Cells[0].Value.ToString()));
             }
             Console.WriteLine(Inventory.AllParts.Count);
+        }
+
+        private void ModifyPartButton_Click(object sender, EventArgs e)
+        {
+            ModifyPartForm modForm = new ModifyPartForm(this);
+            foreach(DataGridViewRow row in dgvParts.SelectedRows)
+            {
+                if(row.DataBoundItem is Outsourced)
+                {
+                    modForm.rbModOutSourced.Checked = true;
+                    Outsourced part = Inventory.AllParts.Where(x => x.PartID == int.Parse(row.Cells[0].Value.ToString())).First() as Outsourced;
+                    modForm.tbModPartID.Text = part.PartID.ToString();
+                    modForm.tbModPartName.Text = part.PartName.ToString();
+                    modForm.tbModPartInventory.Text = part.InStock.ToString();
+                    modForm.tbModPartPrice.Text = part.Price.ToString();
+                    modForm.tbModPartMin.Text = part.Min.ToString();
+                    modForm.tbModPartMax.Text = part.Max.ToString();
+                    modForm.tbModCompanyName.Text = part.CompanyName.ToString();
+                }
+            }
+            modForm.Show();
         }
     }
 }

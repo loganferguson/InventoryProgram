@@ -228,7 +228,7 @@
             this.tbCompanyName.Location = new System.Drawing.Point(189, 312);
             this.tbCompanyName.Name = "tbCompanyName";
             this.tbCompanyName.Size = new System.Drawing.Size(100, 22);
-            this.tbCompanyName.TabIndex = 19;
+            this.tbCompanyName.TabIndex = 7;
             this.tbCompanyName.Visible = false;
             // 
             // lbCompanyName

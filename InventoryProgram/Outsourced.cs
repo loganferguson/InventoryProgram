@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventoryProgram
 {
-    class Outsourced : Part
+    public class Outsourced : Part
     {
         public string CompanyName { get; set; }
     }

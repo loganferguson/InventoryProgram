@@ -9,3 +9,4 @@ C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\obj\Debug\Inventor
 C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\obj\Debug\InventoryProgram.pdb
 C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\obj\Debug\InventoryProgram.mainForm.resources
 C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\obj\Debug\InventoryProgram.AddProductForm.resources
+C:\Users\lferg\source\repos\InventoryProgram\InventoryProgram\obj\Debug\InventoryProgram.ModifyPartForm.resources

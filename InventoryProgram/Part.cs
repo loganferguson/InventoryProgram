@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventoryProgram
 {
-    public class Part
+    public abstract class Part
     {
         public int PartID { get; set; }
         public string PartName { get; set; }
@@ -14,7 +14,6 @@ namespace InventoryProgram
         public int InStock { get; set; }
         public int Min { get; set; }
         public int Max { get; set; }
-        public bool IsOutsourced { get; set; }
 
     }
 }

@@ -31,12 +31,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbModOutSourced = new System.Windows.Forms.RadioButton();
             this.rbModInHouse = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbModPartID = new System.Windows.Forms.TextBox();
+            this.tbModPartName = new System.Windows.Forms.TextBox();
+            this.tbModPartInventory = new System.Windows.Forms.TextBox();
+            this.tbModPartPrice = new System.Windows.Forms.TextBox();
+            this.tbModPartMin = new System.Windows.Forms.TextBox();
+            this.tbModPartMax = new System.Windows.Forms.TextBox();
             this.tbModCompanyName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -86,47 +86,48 @@
             this.rbModInHouse.UseVisualStyleBackColor = true;
             this.rbModInHouse.CheckedChanged += new System.EventHandler(this.rbModInHouse_CheckedChanged);
             // 
-            // textBox1
+            // tbModPartID
             // 
-            this.textBox1.Location = new System.Drawing.Point(169, 151);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 22);
-            this.textBox1.TabIndex = 1;
+            this.tbModPartID.Location = new System.Drawing.Point(169, 151);
+            this.tbModPartID.Name = "tbModPartID";
+            this.tbModPartID.ReadOnly = true;
+            this.tbModPartID.Size = new System.Drawing.Size(157, 22);
+            this.tbModPartID.TabIndex = 1;
             // 
-            // textBox2
+            // tbModPartName
             // 
-            this.textBox2.Location = new System.Drawing.Point(169, 192);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(157, 22);
-            this.textBox2.TabIndex = 2;
+            this.tbModPartName.Location = new System.Drawing.Point(169, 192);
+            this.tbModPartName.Name = "tbModPartName";
+            this.tbModPartName.Size = new System.Drawing.Size(157, 22);
+            this.tbModPartName.TabIndex = 2;
             // 
-            // textBox3
+            // tbModPartInventory
             // 
-            this.textBox3.Location = new System.Drawing.Point(169, 233);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(157, 22);
-            this.textBox3.TabIndex = 3;
+            this.tbModPartInventory.Location = new System.Drawing.Point(169, 233);
+            this.tbModPartInventory.Name = "tbModPartInventory";
+            this.tbModPartInventory.Size = new System.Drawing.Size(157, 22);
+            this.tbModPartInventory.TabIndex = 3;
             // 
-            // textBox4
+            // tbModPartPrice
             // 
-            this.textBox4.Location = new System.Drawing.Point(169, 273);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(157, 22);
-            this.textBox4.TabIndex = 4;
+            this.tbModPartPrice.Location = new System.Drawing.Point(169, 273);
+            this.tbModPartPrice.Name = "tbModPartPrice";
+            this.tbModPartPrice.Size = new System.Drawing.Size(157, 22);
+            this.tbModPartPrice.TabIndex = 4;
             // 
-            // textBox5
+            // tbModPartMin
             // 
-            this.textBox5.Location = new System.Drawing.Point(139, 324);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(86, 22);
-            this.textBox5.TabIndex = 5;
+            this.tbModPartMin.Location = new System.Drawing.Point(139, 324);
+            this.tbModPartMin.Name = "tbModPartMin";
+            this.tbModPartMin.Size = new System.Drawing.Size(86, 22);
+            this.tbModPartMin.TabIndex = 5;
             // 
-            // textBox6
+            // tbModPartMax
             // 
-            this.textBox6.Location = new System.Drawing.Point(295, 324);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(85, 22);
-            this.textBox6.TabIndex = 6;
+            this.tbModPartMax.Location = new System.Drawing.Point(295, 324);
+            this.tbModPartMax.Name = "tbModPartMax";
+            this.tbModPartMax.Size = new System.Drawing.Size(85, 22);
+            this.tbModPartMax.TabIndex = 6;
             // 
             // tbModCompanyName
             // 
@@ -222,6 +223,7 @@
             this.SaveModPartButton.TabIndex = 17;
             this.SaveModPartButton.Text = "Save";
             this.SaveModPartButton.UseVisualStyleBackColor = true;
+            this.SaveModPartButton.Click += new System.EventHandler(this.SaveModPartButton_Click);
             // 
             // CancelModPartButton
             // 
@@ -231,6 +233,7 @@
             this.CancelModPartButton.TabIndex = 18;
             this.CancelModPartButton.Text = "Cancel";
             this.CancelModPartButton.UseVisualStyleBackColor = true;
+            this.CancelModPartButton.Click += new System.EventHandler(this.CancelModPartButton_Click);
             // 
             // ModifyPartForm
             // 
@@ -249,12 +252,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbModCompanyName);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbModPartMax);
+            this.Controls.Add(this.tbModPartMin);
+            this.Controls.Add(this.tbModPartPrice);
+            this.Controls.Add(this.tbModPartInventory);
+            this.Controls.Add(this.tbModPartName);
+            this.Controls.Add(this.tbModPartID);
             this.Controls.Add(this.groupBox1);
             this.Name = "ModifyPartForm";
             this.Text = "Modify Part";
@@ -268,15 +271,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbModOutSourced;
-        private System.Windows.Forms.RadioButton rbModInHouse;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox tbModCompanyName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -284,9 +278,18 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbModCompanyName;
-        private System.Windows.Forms.TextBox tbModMachineID;
         private System.Windows.Forms.Label lbModMachineID;
         private System.Windows.Forms.Button SaveModPartButton;
         private System.Windows.Forms.Button CancelModPartButton;
+        public System.Windows.Forms.RadioButton rbModOutSourced;
+        public System.Windows.Forms.RadioButton rbModInHouse;
+        public System.Windows.Forms.TextBox tbModPartID;
+        public System.Windows.Forms.TextBox tbModPartName;
+        public System.Windows.Forms.TextBox tbModPartInventory;
+        public System.Windows.Forms.TextBox tbModPartPrice;
+        public System.Windows.Forms.TextBox tbModPartMin;
+        public System.Windows.Forms.TextBox tbModPartMax;
+        public System.Windows.Forms.TextBox tbModMachineID;
+        public System.Windows.Forms.TextBox tbModCompanyName;
     }
 }
