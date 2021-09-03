@@ -289,13 +289,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbID;
-        private System.Windows.Forms.TextBox tbPartName;
-        private System.Windows.Forms.TextBox tbInventory;
-        private System.Windows.Forms.TextBox tbPriceCost;
-        private System.Windows.Forms.TextBox tbMin;
-        private System.Windows.Forms.TextBox tbMax;
-        private System.Windows.Forms.TextBox tbMachineID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -303,12 +296,19 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbMachineID;
-        private System.Windows.Forms.RadioButton rdInHouse;
-        private System.Windows.Forms.RadioButton rdOutsourced;
         private System.Windows.Forms.Button btSavePart;
         private System.Windows.Forms.Button btCancelAddPart;
-        private System.Windows.Forms.TextBox tbCompanyName;
         private System.Windows.Forms.Label lbCompanyName;
         private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.TextBox tbID;
+        public System.Windows.Forms.TextBox tbPartName;
+        public System.Windows.Forms.TextBox tbInventory;
+        public System.Windows.Forms.TextBox tbPriceCost;
+        public System.Windows.Forms.TextBox tbMin;
+        public System.Windows.Forms.TextBox tbMax;
+        public System.Windows.Forms.RadioButton rdInHouse;
+        public System.Windows.Forms.RadioButton rdOutsourced;
+        public System.Windows.Forms.TextBox tbCompanyName;
+        public System.Windows.Forms.TextBox tbMachineID;
     }
 }

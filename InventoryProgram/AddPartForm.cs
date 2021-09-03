@@ -60,66 +60,8 @@ namespace InventoryProgram
                 return;
             }
 
-            //Converting string values to decimal/int.
-
-            decimal partPrice = decimal.Parse(tbPriceCost.Text); //Price
-            int partMin = int.Parse(tbMin.Text); //Min
-            int partMax = int.Parse(tbMax.Text); //Max
-            int partInventory = int.Parse(tbInventory.Text); //Inventory
-
-
-            //Checking if InHouse part.
-
-            if (rdInHouse.Checked)
-            {
-
-                Inhouse inhousePart = new Inhouse();
-                if (Inventory.AllParts == null)
-                {
-                    inhousePart.PartID = 1;
-                }
-                else
-                {
-                    inhousePart.PartID = Inventory.AllParts.Count + 1;
-                }
-                inhousePart.PartName = tbPartName.Text;
-                inhousePart.Price = partPrice;
-                inhousePart.Min = partMin;
-                inhousePart.Max = partMax;
-                inhousePart.InStock = partInventory;
-                int machine = int.Parse(tbMachineID.Text);
-                inhousePart.MachineID = machine;
-                Inventory.AllParts.Add(inhousePart);
-
-                Console.WriteLine(Inventory.AllParts.Count);
-                mainform.InitializePartDataGridView();
-                this.Close();
-            }
-            else if (rdOutsourced.Checked)
-            {
-                Outsourced outPart = new Outsourced();
-                if (Inventory.AllParts == null)
-                {
-                    outPart.PartID = 1;
-                }
-                else
-                {
-                    outPart.PartID = Inventory.AllParts.Count + 1;
-                }
-
-                outPart.PartName = tbPartName.Text;
-                outPart.Price = partPrice;
-                outPart.Min = partMin;
-                outPart.Max = partMax;
-                outPart.InStock = partInventory;
-                string company = tbCompanyName.Text;
-                outPart.CompanyName = company;
-
-                Inventory.AllParts.Add(outPart);
-                mainform.InitializePartDataGridView();
-                this.Close();
-            }
-
+            Inventory i = new Inventory(mainform);
+            i.addPart(this);
 
         }
 

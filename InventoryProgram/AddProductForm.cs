@@ -28,7 +28,6 @@ namespace InventoryProgram
             var source = new BindingSource();
             source.DataSource = Inventory.AllParts;
             dgvCandidateParts.DataSource = source;
-            dgvCandidateParts.Columns[6].Visible = false;
         }
 
         public void InitializeAssociatedGridView()

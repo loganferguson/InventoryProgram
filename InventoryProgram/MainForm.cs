@@ -65,13 +65,8 @@ namespace InventoryProgram
 
         private void DeletePartButton_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgvParts.SelectedRows)
-            {
-                string rowID = row.Cells[1].Value.ToString();
-                dgvParts.Rows.RemoveAt(row.Index);
-                //Inventory.AllParts.RemoveAll(x => x.PartID == int.Parse(row.Cells[0].Value.ToString()));
-            }
-            Console.WriteLine(Inventory.AllParts.Count);
+            Inventory i = new Inventory(this);
+            i.DeletePart();
         }
 
         private void ModifyPartButton_Click(object sender, EventArgs e)
@@ -90,6 +85,18 @@ namespace InventoryProgram
                     modForm.tbModPartMin.Text = part.Min.ToString();
                     modForm.tbModPartMax.Text = part.Max.ToString();
                     modForm.tbModCompanyName.Text = part.CompanyName.ToString();
+                }
+                else if (row.DataBoundItem is Inhouse)
+                {
+                    modForm.rbModInHouse.Checked = true;
+                    Inhouse part = Inventory.AllParts.Where(x => x.PartID == int.Parse(row.Cells[0].Value.ToString())).First() as Inhouse;
+                    modForm.tbModPartID.Text = part.PartID.ToString();
+                    modForm.tbModPartName.Text = part.PartName.ToString();
+                    modForm.tbModPartInventory.Text = part.InStock.ToString();
+                    modForm.tbModPartPrice.Text = part.Price.ToString();
+                    modForm.tbModPartMin.Text = part.Min.ToString();
+                    modForm.tbModPartMax.Text = part.Max.ToString();
+                    modForm.tbModMachineID.Text = part.MachineID.ToString();
                 }
             }
             modForm.Show();
