@@ -20,6 +20,8 @@ namespace InventoryProgram
         }
 
 
+        //PART METHODS:
+
         public void addPart(AddPartForm a)
         {
             //Converting string values to decimal/int.
@@ -200,6 +202,24 @@ namespace InventoryProgram
             }
         }
 
+        public void LookupPart(mainForm m)
+        {
+            string searchValue = m.tbPartSearch.Text;
+
+            if (String.IsNullOrEmpty(searchValue))
+            {
+                return;
+            }
+
+            foreach (DataGridViewRow row in mainform.dgvParts.Rows)
+            {
+                if (row.Cells[1].Value != null && row.Cells[1].Value.ToString().Contains(searchValue))
+                {
+                    row.Selected = true;
+                }
+            }
+        }
+
         public void DeletePart(Inhouse inPart)
         {
             Inventory.AllParts.Remove(inPart);
@@ -215,6 +235,30 @@ namespace InventoryProgram
                 string rowID = row.Cells[1].Value.ToString();
                 mainform.dgvParts.Rows.RemoveAt(row.Index);
             }
+        }
+
+        //PRODUCT METHODS:
+
+        public void AddProduct(AddProductForm p, Product prod)
+        {
+
+            if (mainform.dgvProducts.RowCount == 0)
+            {
+                prod.ProductID = 1;
+            }
+            else
+            {
+                prod.ProductID = mainform.dgvProducts.RowCount + 1;
+            }
+
+            prod.ProductName = p.tbProductName.Text;
+            prod.InStock = int.Parse(p.tbProductInventory.Text.ToString());
+            prod.Price = int.Parse(p.tbProductPrice.Text.ToString());
+            prod.Min = int.Parse(p.tbProductMin.Text.ToString());
+            prod.Max = int.Parse(p.tbProductMax.Text.ToString());
+
+            Products.Add(prod);
+
         }
     }
 }

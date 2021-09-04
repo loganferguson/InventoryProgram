@@ -11,11 +11,14 @@ using System.Windows.Forms;
 namespace InventoryProgram
 {
     public partial class AddProductForm : Form
-    {
+    { 
         public mainForm mainform;
+        public Product product;
 
         public AddProductForm(mainForm main)
         {
+            Product p = new Product(this);
+            product = p;
             mainform = main;
             InitializeComponent();
             InitializeCandidateGridView();
@@ -25,6 +28,7 @@ namespace InventoryProgram
 
         public void InitializeCandidateGridView()
         {
+            
             var source = new BindingSource();
             source.DataSource = Inventory.AllParts;
             dgvCandidateParts.DataSource = source;
@@ -32,16 +36,11 @@ namespace InventoryProgram
 
         public void InitializeAssociatedGridView()
         {
-            dgvAssociatedParts.ColumnCount = 6;
-            dgvAssociatedParts.ColumnHeadersVisible = true;
-            dgvAssociatedParts.ReadOnly = true;
-
-            dgvAssociatedParts.Columns[0].Name = "PartID";
-            dgvAssociatedParts.Columns[1].Name = "Name";
-            dgvAssociatedParts.Columns[2].Name = "Inventory";
-            dgvAssociatedParts.Columns[3].Name = "Price";
-            dgvAssociatedParts.Columns[4].Name = "Min";
-            dgvAssociatedParts.Columns[5].Name = "Max";
+            List<Part> list = new List<Part>();
+            list = product.AssociatedParts;
+            var source = new BindingSource();
+            source.DataSource = list;
+            dgvAssociatedParts.DataSource = source;
         }
 
         private void SearchAssociatedButton_Click(object sender, EventArgs e)
@@ -52,6 +51,22 @@ namespace InventoryProgram
         private void CancelAddProduct_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AddCandidateButton_Click(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow row in dgvCandidateParts.SelectedRows)
+            {
+                product.AddAssociatedPart(row, product);
+            }
+        }
+
+        private void SaveProductButton_Click(object sender, EventArgs e)
+        {
+            Inventory inventory = new Inventory(mainform);
+            inventory.AddProduct(this, product);
+            this.Close();
+            mainform.InitializeProductDataGridView();
         }
     }
 }

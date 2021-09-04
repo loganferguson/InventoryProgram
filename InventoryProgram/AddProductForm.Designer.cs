@@ -46,7 +46,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SaveProductButton = new System.Windows.Forms.Button();
             this.DeleteAssociatedButton = new System.Windows.Forms.Button();
             this.CancelAddProduct = new System.Windows.Forms.Button();
             this.AddCandidateButton = new System.Windows.Forms.Button();
@@ -60,11 +60,13 @@
             this.dgvCandidateParts.AllowUserToAddRows = false;
             this.dgvCandidateParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCandidateParts.Location = new System.Drawing.Point(360, 127);
+            this.dgvCandidateParts.MultiSelect = false;
             this.dgvCandidateParts.Name = "dgvCandidateParts";
             this.dgvCandidateParts.ReadOnly = true;
             this.dgvCandidateParts.RowHeadersVisible = false;
             this.dgvCandidateParts.RowHeadersWidth = 51;
             this.dgvCandidateParts.RowTemplate.Height = 24;
+            this.dgvCandidateParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCandidateParts.Size = new System.Drawing.Size(653, 164);
             this.dgvCandidateParts.TabIndex = 0;
             // 
@@ -73,11 +75,13 @@
             this.dgvAssociatedParts.AllowUserToAddRows = false;
             this.dgvAssociatedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAssociatedParts.Location = new System.Drawing.Point(360, 395);
+            this.dgvAssociatedParts.MultiSelect = false;
             this.dgvAssociatedParts.Name = "dgvAssociatedParts";
             this.dgvAssociatedParts.ReadOnly = true;
             this.dgvAssociatedParts.RowHeadersVisible = false;
             this.dgvAssociatedParts.RowHeadersWidth = 51;
             this.dgvAssociatedParts.RowTemplate.Height = 24;
+            this.dgvAssociatedParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAssociatedParts.Size = new System.Drawing.Size(653, 161);
             this.dgvAssociatedParts.TabIndex = 1;
             // 
@@ -155,6 +159,7 @@
             // 
             this.tbProductID.Location = new System.Drawing.Point(129, 177);
             this.tbProductID.Name = "tbProductID";
+            this.tbProductID.ReadOnly = true;
             this.tbProductID.Size = new System.Drawing.Size(157, 22);
             this.tbProductID.TabIndex = 11;
             // 
@@ -212,14 +217,15 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Max";
             // 
-            // button1
+            // SaveProductButton
             // 
-            this.button1.Location = new System.Drawing.Point(104, 463);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 33);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SaveProductButton.Location = new System.Drawing.Point(104, 463);
+            this.SaveProductButton.Name = "SaveProductButton";
+            this.SaveProductButton.Size = new System.Drawing.Size(83, 33);
+            this.SaveProductButton.TabIndex = 18;
+            this.SaveProductButton.Text = "Save";
+            this.SaveProductButton.UseVisualStyleBackColor = true;
+            this.SaveProductButton.Click += new System.EventHandler(this.SaveProductButton_Click);
             // 
             // DeleteAssociatedButton
             // 
@@ -248,6 +254,7 @@
             this.AddCandidateButton.TabIndex = 21;
             this.AddCandidateButton.Text = "Add";
             this.AddCandidateButton.UseVisualStyleBackColor = true;
+            this.AddCandidateButton.Click += new System.EventHandler(this.AddCandidateButton_Click);
             // 
             // lbAddProduct
             // 
@@ -268,7 +275,7 @@
             this.Controls.Add(this.AddCandidateButton);
             this.Controls.Add(this.CancelAddProduct);
             this.Controls.Add(this.DeleteAssociatedButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SaveProductButton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -297,28 +304,28 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvAssociatedParts;
         private System.Windows.Forms.Label lbCandidateParts;
         private System.Windows.Forms.Label lbAssociatedParts;
         private System.Windows.Forms.TextBox tbCandidateSearch;
         private System.Windows.Forms.Button SearchAssociatedButton;
-        private System.Windows.Forms.TextBox tbProductName;
-        private System.Windows.Forms.TextBox tbProductInventory;
-        private System.Windows.Forms.TextBox tbProductPrice;
-        private System.Windows.Forms.TextBox tbProductMin;
-        private System.Windows.Forms.TextBox tbProductMax;
-        private System.Windows.Forms.TextBox tbProductID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SaveProductButton;
         private System.Windows.Forms.Button DeleteAssociatedButton;
         private System.Windows.Forms.Button CancelAddProduct;
         private System.Windows.Forms.Button AddCandidateButton;
         private System.Windows.Forms.Label lbAddProduct;
         public System.Windows.Forms.DataGridView dgvCandidateParts;
+        public System.Windows.Forms.TextBox tbProductName;
+        public System.Windows.Forms.TextBox tbProductInventory;
+        public System.Windows.Forms.TextBox tbProductPrice;
+        public System.Windows.Forms.TextBox tbProductMin;
+        public System.Windows.Forms.TextBox tbProductMax;
+        public System.Windows.Forms.TextBox tbProductID;
+        public System.Windows.Forms.DataGridView dgvAssociatedParts;
     }
 }

@@ -41,25 +41,14 @@ namespace InventoryProgram
 
         public void SearchPartButton_Click(object sender, EventArgs e)
         {
-            string searchValue = tbPartSearch.Text;
-
-            if (String.IsNullOrEmpty(searchValue))
-            {
-                return;
-            }
-
-            foreach(DataGridViewRow row in dgvParts.Rows)
-            {
-                if (row.Cells[1].Value != null && row.Cells[1].Value.ToString().Contains(searchValue))
-                {
-                    row.Selected = true;
-                }
-            }
+            Inventory i = new Inventory(this);
+            i.LookupPart(this);
         }
 
         private void AddProductButton_Click(object sender, EventArgs e)
         {
             AddProductForm form = new AddProductForm(this);
+            
             form.Show();
         }
 
