@@ -253,11 +253,16 @@ namespace InventoryProgram
 
             prod.ProductName = p.tbProductName.Text;
             prod.InStock = int.Parse(p.tbProductInventory.Text.ToString());
-            prod.Price = int.Parse(p.tbProductPrice.Text.ToString());
+            prod.Price = decimal.Parse(p.tbProductPrice.Text.ToString());
             prod.Min = int.Parse(p.tbProductMin.Text.ToString());
             prod.Max = int.Parse(p.tbProductMax.Text.ToString());
 
             Products.Add(prod);
+
+        }
+
+        public void UpdateProduct(mainForm m)
+        {
 
         }
     }

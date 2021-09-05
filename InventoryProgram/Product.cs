@@ -16,7 +16,7 @@ namespace InventoryProgram
 
         public int ProductID { get; set; }
         public string ProductName { get; set; }
-        public int Price { get; set; }
+        public decimal Price { get; set; }
         public int InStock { get; set; }
         public int Min { get; set; }
         public int Max { get; set; }
@@ -34,7 +34,7 @@ namespace InventoryProgram
         {
             int partID = int.Parse(row.Cells[0].Value.ToString());
             string partName = row.Cells[1].Value.ToString();
-            int price = int.Parse(row.Cells[2].Value.ToString());
+            decimal price = decimal.Parse(row.Cells[2].Value.ToString());
             int inStock = int.Parse(row.Cells[3].Value.ToString());
             
             int min = int.Parse(row.Cells[4].Value.ToString());

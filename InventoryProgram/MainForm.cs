@@ -90,5 +90,23 @@ namespace InventoryProgram
             }
             modForm.Show();
         }
+
+        private void ModifyProductButton_Click(object sender, EventArgs e)
+        {
+            
+            foreach(DataGridViewRow row in dgvProducts.SelectedRows)
+            {
+                var p = Inventory.Products.Where(x => x.ProductID == int.Parse(row.Cells[0].Value.ToString())).First();
+                ModifyProductForm form = new ModifyProductForm(this, p);
+                form.tbModProductID.Text = row.Cells[0].Value.ToString();
+                form.tbModProductName.Text = row.Cells[1].Value.ToString();
+                form.tbModProductInventory.Text = row.Cells[2].Value.ToString();
+                form.tbModProductPrice.Text = row.Cells[3].Value.ToString();
+                form.tbModProductMin.Text = row.Cells[4].Value.ToString();
+                form.tbModProductMax.Text = row.Cells[5].Value.ToString();
+
+                form.Show();
+            }
+        }
     }
 }
