@@ -39,6 +39,34 @@ namespace InventoryProgram
 
         private void SaveModProductButton_Click(object sender, EventArgs e)
         {
+            //Exception Handling:
+            if (
+                string.IsNullOrEmpty(tbModProductName.Text) ||
+                string.IsNullOrEmpty(tbModProductName.Text) ||
+                string.IsNullOrEmpty(tbModProductName.Text) ||
+                string.IsNullOrEmpty(tbModProductName.Text) ||
+                string.IsNullOrEmpty(tbModProductName.Text)
+                )
+            {
+                MessageBox.Show("One or more of the fields was not completed.");
+                return;
+            }
+            else if (!decimal.TryParse(tbModProductPrice.Text, out decimal d))
+            {
+                MessageBox.Show("The product price field must be a numerical value.");
+            }
+            else if (!int.TryParse(tbModProductInventory.Text, out int i))
+            {
+                MessageBox.Show("The inventory field must be a whole number value.");
+            }
+            else if (!int.TryParse(tbModProductMin.Text, out int j))
+            {
+                MessageBox.Show("The inventory minimum field must be a whole number value.");
+            }
+            else if (!int.TryParse(tbModProductMax.Text, out int k))
+            {
+                MessageBox.Show("The inventory maximum field must be a whole number value.");
+            }
             Inventory.UpdateProduct(this, mainform);
         }
 

@@ -63,10 +63,49 @@ namespace InventoryProgram
 
         private void SaveProductButton_Click(object sender, EventArgs e)
         {
+            if (!IsValid())
+            {
+                return;
+            }
             Inventory inventory = new Inventory(mainform);
             inventory.AddProduct(this, product);
             this.Close();
             mainform.InitializeProductDataGridView();
+        }
+        public bool IsValid()
+        {
+            if (
+                string.IsNullOrEmpty(tbProductName.Text) ||
+                string.IsNullOrEmpty(tbProductName.Text) ||
+                string.IsNullOrEmpty(tbProductName.Text) ||
+                string.IsNullOrEmpty(tbProductName.Text) ||
+                string.IsNullOrEmpty(tbProductName.Text)
+                )
+            {
+                MessageBox.Show("One or more of the fields was not completed.");
+                return false;
+            }
+            else if (!decimal.TryParse(tbProductPrice.Text, out decimal d))
+            {
+                MessageBox.Show("The product price field must be a numerical value.");
+                return false;
+            }
+            else if (!int.TryParse(tbProductInventory.Text, out int i))
+            {
+                MessageBox.Show("The inventory field must be a whole number value.");
+                return false;
+            }
+            else if (!int.TryParse(tbProductMin.Text, out int j))
+            {
+                MessageBox.Show("The inventory minimum field must be a whole number value.");
+                return false;
+            }
+            else if (!int.TryParse(tbProductMax.Text, out int k))
+            {
+                MessageBox.Show("The inventory maximum field must be a whole number value.");
+                return false;
+            }
+            return true;
         }
     }
 }
