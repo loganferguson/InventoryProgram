@@ -15,8 +15,35 @@ namespace InventoryProgram
         public mainForm()
         {
             InitializeComponent();
+            SeedData();
             InitializePartDataGridView();
             InitializeProductDataGridView();
+        }
+
+        public void SeedData()
+        {
+            Outsourced outPart = new Outsourced
+            {
+                PartID = 1,
+                PartName = "Chain",
+                InStock = 23,
+                Price = 35,
+                Min = 10,
+                Max = 40,
+                CompanyName = "Dobis Company"
+            };
+            Inhouse inPart = new Inhouse
+            {
+                PartID = 2,
+                PartName = "Wheel",
+                InStock = 47,
+                Price = 50,
+                Min = 10,
+                Max = 80,
+                MachineID = 440125
+            };
+            Inventory.AllParts.Add(outPart);
+            Inventory.AllParts.Add(inPart);
         }
 
         private void AddPartButton_Click(object sender, EventArgs e)
@@ -60,8 +87,9 @@ namespace InventoryProgram
 
         private void ModifyPartButton_Click(object sender, EventArgs e)
         {
+            
             ModifyPartForm modForm = new ModifyPartForm(this);
-            foreach(DataGridViewRow row in dgvParts.SelectedRows)
+            foreach (DataGridViewRow row in dgvParts.SelectedRows)
             {
                 if(row.DataBoundItem is Outsourced)
                 {
@@ -100,8 +128,8 @@ namespace InventoryProgram
                 ModifyProductForm form = new ModifyProductForm(this, p);
                 form.tbModProductID.Text = row.Cells[0].Value.ToString();
                 form.tbModProductName.Text = row.Cells[1].Value.ToString();
-                form.tbModProductInventory.Text = row.Cells[2].Value.ToString();
-                form.tbModProductPrice.Text = row.Cells[3].Value.ToString();
+                form.tbModProductPrice.Text = row.Cells[2].Value.ToString();
+                form.tbModProductInventory.Text = row.Cells[3].Value.ToString();             
                 form.tbModProductMin.Text = row.Cells[4].Value.ToString();
                 form.tbModProductMax.Text = row.Cells[5].Value.ToString();
 

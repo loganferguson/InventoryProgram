@@ -220,6 +220,7 @@ namespace InventoryProgram
             }
         }
 
+        //Delete Part overloaded methods for Inhouse and Outsourced respectively:
         public void DeletePart(Inhouse inPart)
         {
             Inventory.AllParts.Remove(inPart);
@@ -261,9 +262,16 @@ namespace InventoryProgram
 
         }
 
-        public void UpdateProduct(mainForm m)
+        public static void UpdateProduct(ModifyProductForm m, mainForm main)
         {
-
+            var prod = Inventory.Products.Where(x => x.ProductID == int.Parse(m.tbModProductID.Text)).First();
+            prod.ProductName = m.tbModProductName.Text;
+            prod.InStock = int.Parse(m.tbModProductInventory.Text);
+            prod.Price = decimal.Parse(m.tbModProductPrice.Text);
+            prod.Min = int.Parse(m.tbModProductMin.Text);
+            prod.Max = int.Parse(m.tbModProductMax.Text);
+            m.Close();
+            main.InitializeProductDataGridView();
         }
     }
 }

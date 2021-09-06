@@ -48,9 +48,9 @@
             this.tbCandidateSearch = new System.Windows.Forms.TextBox();
             this.lbAssociatedParts = new System.Windows.Forms.Label();
             this.lbCandidateParts = new System.Windows.Forms.Label();
-            this.dgvModAssociatedParts = new System.Windows.Forms.DataGridView();
+            this.dgvAssociatedParts = new System.Windows.Forms.DataGridView();
             this.dgvCandidateParts = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvModAssociatedParts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssociatedParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCandidateParts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +62,7 @@
             this.AddCandidateButton.TabIndex = 43;
             this.AddCandidateButton.Text = "Add";
             this.AddCandidateButton.UseVisualStyleBackColor = true;
+            this.AddCandidateButton.Click += new System.EventHandler(this.AddCandidateButton_Click);
             // 
             // CancelModAddProduct
             // 
@@ -89,6 +90,7 @@
             this.SaveModProductButton.TabIndex = 40;
             this.SaveModProductButton.Text = "Save";
             this.SaveModProductButton.UseVisualStyleBackColor = true;
+            this.SaveModProductButton.Click += new System.EventHandler(this.SaveModProductButton_Click);
             // 
             // label6
             // 
@@ -221,20 +223,20 @@
             this.lbCandidateParts.TabIndex = 24;
             this.lbCandidateParts.Text = "Candidate Parts";
             // 
-            // dgvModAssociatedParts
+            // dgvAssociatedParts
             // 
-            this.dgvModAssociatedParts.AllowUserToAddRows = false;
-            this.dgvModAssociatedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvModAssociatedParts.Location = new System.Drawing.Point(365, 392);
-            this.dgvModAssociatedParts.MultiSelect = false;
-            this.dgvModAssociatedParts.Name = "dgvModAssociatedParts";
-            this.dgvModAssociatedParts.ReadOnly = true;
-            this.dgvModAssociatedParts.RowHeadersVisible = false;
-            this.dgvModAssociatedParts.RowHeadersWidth = 51;
-            this.dgvModAssociatedParts.RowTemplate.Height = 24;
-            this.dgvModAssociatedParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvModAssociatedParts.Size = new System.Drawing.Size(653, 161);
-            this.dgvModAssociatedParts.TabIndex = 23;
+            this.dgvAssociatedParts.AllowUserToAddRows = false;
+            this.dgvAssociatedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAssociatedParts.Location = new System.Drawing.Point(365, 392);
+            this.dgvAssociatedParts.MultiSelect = false;
+            this.dgvAssociatedParts.Name = "dgvAssociatedParts";
+            this.dgvAssociatedParts.ReadOnly = true;
+            this.dgvAssociatedParts.RowHeadersVisible = false;
+            this.dgvAssociatedParts.RowHeadersWidth = 51;
+            this.dgvAssociatedParts.RowTemplate.Height = 24;
+            this.dgvAssociatedParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAssociatedParts.Size = new System.Drawing.Size(653, 161);
+            this.dgvAssociatedParts.TabIndex = 23;
             // 
             // dgvCandidateParts
             // 
@@ -276,11 +278,11 @@
             this.Controls.Add(this.tbCandidateSearch);
             this.Controls.Add(this.lbAssociatedParts);
             this.Controls.Add(this.lbCandidateParts);
-            this.Controls.Add(this.dgvModAssociatedParts);
+            this.Controls.Add(this.dgvAssociatedParts);
             this.Controls.Add(this.dgvCandidateParts);
             this.Name = "ModifyProductForm";
             this.Text = "ModifyProductForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvModAssociatedParts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssociatedParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCandidateParts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -309,7 +311,7 @@
         private System.Windows.Forms.TextBox tbCandidateSearch;
         private System.Windows.Forms.Label lbAssociatedParts;
         private System.Windows.Forms.Label lbCandidateParts;
-        public System.Windows.Forms.DataGridView dgvModAssociatedParts;
+        public System.Windows.Forms.DataGridView dgvAssociatedParts;
         public System.Windows.Forms.DataGridView dgvCandidateParts;
     }
 }
