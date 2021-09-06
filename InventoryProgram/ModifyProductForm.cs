@@ -40,33 +40,11 @@ namespace InventoryProgram
         private void SaveModProductButton_Click(object sender, EventArgs e)
         {
             //Exception Handling:
-            if (
-                string.IsNullOrEmpty(tbModProductName.Text) ||
-                string.IsNullOrEmpty(tbModProductName.Text) ||
-                string.IsNullOrEmpty(tbModProductName.Text) ||
-                string.IsNullOrEmpty(tbModProductName.Text) ||
-                string.IsNullOrEmpty(tbModProductName.Text)
-                )
+            if (!IsValid())
             {
-                MessageBox.Show("One or more of the fields was not completed.");
                 return;
             }
-            else if (!decimal.TryParse(tbModProductPrice.Text, out decimal d))
-            {
-                MessageBox.Show("The product price field must be a numerical value.");
-            }
-            else if (!int.TryParse(tbModProductInventory.Text, out int i))
-            {
-                MessageBox.Show("The inventory field must be a whole number value.");
-            }
-            else if (!int.TryParse(tbModProductMin.Text, out int j))
-            {
-                MessageBox.Show("The inventory minimum field must be a whole number value.");
-            }
-            else if (!int.TryParse(tbModProductMax.Text, out int k))
-            {
-                MessageBox.Show("The inventory maximum field must be a whole number value.");
-            }
+            
             Inventory.UpdateProduct(this, mainform);
         }
 
@@ -77,6 +55,56 @@ namespace InventoryProgram
                 
                 product.AddAssociatedPart(row, product, this);
             }
+        }
+
+        public bool IsValid()
+        {
+
+            if (
+                string.IsNullOrEmpty(tbModProductName.Text) ||
+                string.IsNullOrEmpty(tbModProductName.Text) ||
+                string.IsNullOrEmpty(tbModProductName.Text) ||
+                string.IsNullOrEmpty(tbModProductName.Text) ||
+                string.IsNullOrEmpty(tbModProductName.Text)
+                )
+            {
+                MessageBox.Show("Wait! One or more of the fields was not completed.");
+                return false;
+            }
+            else if (!decimal.TryParse(tbModProductPrice.Text, out decimal d))
+            {
+                MessageBox.Show("Wait! The product price field must be a numerical value.");
+                return false;
+            }
+            else if (!int.TryParse(tbModProductInventory.Text, out int i))
+            {
+                MessageBox.Show("Wait! The inventory field must be a whole number value.");
+                return false;
+            }
+            else if (!int.TryParse(tbModProductMin.Text, out int j))
+            {
+                MessageBox.Show("Wait! The inventory minimum field must be a whole number value.");
+                return false;
+            }
+            else if (!int.TryParse(tbModProductMax.Text, out int k))
+            {
+                MessageBox.Show("Wait! The inventory maximum field must be a whole number value.");
+                return false;
+            }
+
+            int stock = int.Parse(tbModProductInventory.Text);
+            int max = int.Parse(tbModProductMax.Text);
+            int min = int.Parse(tbModProductMin.Text);
+            if (stock < min || stock > max)
+            {
+                MessageBox.Show("Wait! Product inventory must be greater than \"Min\" and less than \"Max.\"");
+                return false;
+            }
+            if (max < min)
+            {
+                MessageBox.Show("Wait! Maximum cannot be less than minimum.");
+            }
+            return true;
         }
     }
 }

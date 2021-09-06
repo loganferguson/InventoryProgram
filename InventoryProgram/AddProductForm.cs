@@ -74,6 +74,7 @@ namespace InventoryProgram
         }
         public bool IsValid()
         {
+            
             if (
                 string.IsNullOrEmpty(tbProductName.Text) ||
                 string.IsNullOrEmpty(tbProductName.Text) ||
@@ -82,28 +83,41 @@ namespace InventoryProgram
                 string.IsNullOrEmpty(tbProductName.Text)
                 )
             {
-                MessageBox.Show("One or more of the fields was not completed.");
+                MessageBox.Show("Wait! One or more of the fields was not completed.");
                 return false;
             }
             else if (!decimal.TryParse(tbProductPrice.Text, out decimal d))
             {
-                MessageBox.Show("The product price field must be a numerical value.");
+                MessageBox.Show("Wait! The product price field must be a numerical value.");
                 return false;
             }
             else if (!int.TryParse(tbProductInventory.Text, out int i))
             {
-                MessageBox.Show("The inventory field must be a whole number value.");
+                MessageBox.Show("Wait! The inventory field must be a whole number value.");
                 return false;
             }
             else if (!int.TryParse(tbProductMin.Text, out int j))
             {
-                MessageBox.Show("The inventory minimum field must be a whole number value.");
+                MessageBox.Show("Wait! The inventory minimum field must be a whole number value.");
                 return false;
             }
             else if (!int.TryParse(tbProductMax.Text, out int k))
             {
-                MessageBox.Show("The inventory maximum field must be a whole number value.");
+                MessageBox.Show("Wait! The inventory maximum field must be a whole number value.");
                 return false;
+            }
+
+            int stock = int.Parse(tbProductInventory.Text);
+            int max = int.Parse(tbProductMax.Text);
+            int min = int.Parse(tbProductMin.Text);
+            if (stock < min || stock > max)
+            {
+                MessageBox.Show("Wait! Product inventory must be greater than \"Min\" and less than \"Max.\"");
+                return false;
+            }
+            if(max < min)
+            {
+                MessageBox.Show("Wait! Maximum cannot be less than minimum.");
             }
             return true;
         }
