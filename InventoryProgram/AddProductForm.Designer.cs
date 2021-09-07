@@ -235,6 +235,7 @@
             this.DeleteAssociatedButton.TabIndex = 19;
             this.DeleteAssociatedButton.Text = "Delete";
             this.DeleteAssociatedButton.UseVisualStyleBackColor = true;
+            this.DeleteAssociatedButton.Click += new System.EventHandler(this.DeleteAssociatedButton_Click);
             // 
             // CancelAddProduct
             // 

@@ -81,6 +81,7 @@
             this.DeleteAssociatedButton.TabIndex = 41;
             this.DeleteAssociatedButton.Text = "Delete";
             this.DeleteAssociatedButton.UseVisualStyleBackColor = true;
+            this.DeleteAssociatedButton.Click += new System.EventHandler(this.DeleteAssociatedButton_Click);
             // 
             // SaveModProductButton
             // 

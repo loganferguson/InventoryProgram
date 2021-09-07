@@ -27,7 +27,7 @@ namespace InventoryProgram
             AssociatedParts = new List<Part>();
         }
 
-
+        // Two overloaded method versions for adding to associated parts list:
         public void AddAssociatedPart(DataGridViewRow row, Product p)
         {
             int partID = int.Parse(row.Cells[0].Value.ToString());
@@ -113,5 +113,16 @@ namespace InventoryProgram
 
         }
 
+
+        // Two overload method versions for removing from associated parts list:
+        public void RemoveAssociatedPart(DataGridViewRow row, ModifyProductForm form)
+        {
+            form.dgvAssociatedParts.Rows.Remove(row);
+        }
+
+        public void RemoveAssociatedPart(DataGridViewRow row, AddProductForm form)
+        {
+            form.dgvAssociatedParts.Rows.Remove(row);
+        }
     }
 }

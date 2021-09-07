@@ -106,5 +106,23 @@ namespace InventoryProgram
             }
             return true;
         }
+
+        private void DeleteAssociatedButton_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you want to remove this part?";
+            string boxTitle = "Delete Part";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, boxTitle, buttons);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            foreach (DataGridViewRow row in dgvAssociatedParts.SelectedRows)
+            {
+                product.RemoveAssociatedPart(row, this);
+                InitializeDgvAssociatedParts();
+            }
+            
+        }
     }
 }
