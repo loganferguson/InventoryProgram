@@ -39,13 +39,20 @@ namespace InventoryProgram
 
                 Inhouse inhousePart = new Inhouse();
 
-                if (Inventory.AllParts == null)
+                if (mainform.dgvParts.RowCount == 0)
                 {
                     inhousePart.PartID = 1;
                 }
                 else
                 {
-                inhousePart.PartID = Inventory.AllParts.Count + 1;
+                    for (int i = 1; i <= AllParts.Count + 1; i++)
+                    {
+                        if (Products.Any(x => x.ProductID != i))
+                        {
+                            inhousePart.PartID = i;
+                            break;
+                        }
+                    }
                 }
 
                 inhousePart.PartName = a.tbPartName.Text;
@@ -64,13 +71,20 @@ namespace InventoryProgram
             else if (a.rdOutsourced.Checked)
             {
                 Outsourced outPart = new Outsourced();
-                if (Inventory.AllParts == null)
+                if (mainform.dgvParts.RowCount == 0)
                 {
                     outPart.PartID = 1;
                 }
                 else
                 {
-                    outPart.PartID = Inventory.AllParts.Count + 1;
+                    for (int i = 1; i <= AllParts.Count + 1; i++)
+                    {
+                        if (Products.Any(x => x.ProductID != i))
+                        {
+                            outPart.PartID = i;
+                            break;
+                        }
+                    }
                 }
 
                 outPart.PartName = a.tbPartName.Text;
@@ -242,16 +256,22 @@ namespace InventoryProgram
 
         public void AddProduct(AddProductForm p, Product prod)
         {
-
-            if (mainform.dgvProducts.RowCount == 0)
+            if(mainform.dgvProducts.RowCount == 0)
             {
                 prod.ProductID = 1;
             }
             else
             {
-                prod.ProductID = mainform.dgvProducts.RowCount + 1;
+                for (int i = 1; i <= Products.Count + 1; i++)
+                {
+                    if (Products.Any(x => x.ProductID != i))
+                    {
+                        prod.ProductID = i;
+                        break;
+                    }
+                }
             }
-
+            
             prod.ProductName = p.tbProductName.Text;
             prod.InStock = int.Parse(p.tbProductInventory.Text.ToString());
             prod.Price = decimal.Parse(p.tbProductPrice.Text.ToString());
@@ -271,6 +291,15 @@ namespace InventoryProgram
             prod.Min = int.Parse(m.tbModProductMin.Text);
             prod.Max = int.Parse(m.tbModProductMax.Text);
             m.Close();
+            main.InitializeProductDataGridView();
+        }
+
+        public void RemoveProduct(mainForm main)
+        {
+            foreach(DataGridViewRow row in main.dgvProducts.SelectedRows)
+            {
+                main.dgvProducts.Rows.Remove(row);
+            }
             main.InitializeProductDataGridView();
         }
     }

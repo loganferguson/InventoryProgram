@@ -81,6 +81,14 @@ namespace InventoryProgram
 
         private void DeletePartButton_Click(object sender, EventArgs e)
         {
+            string message = "Are you sure you want to remove this part?";
+            string boxTitle = "Delete Part";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, boxTitle, buttons);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
             Inventory i = new Inventory(this);
             i.DeletePart();
         }
@@ -135,6 +143,20 @@ namespace InventoryProgram
 
                 form.Show();
             }
+        }
+
+        private void DeleteProductButton_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you want to remove this product?";
+            string boxTitle = "Delete Product";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, boxTitle, buttons);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            Inventory i = new Inventory(this);
+            i.RemoveProduct(this);
         }
     }
 }
