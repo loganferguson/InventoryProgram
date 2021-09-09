@@ -124,5 +124,24 @@ namespace InventoryProgram
         {
             form.dgvAssociatedParts.Rows.Remove(row);
         }
+
+        public void LookupCandidatePart(AddProductForm form)
+        {
+            form.dgvCandidateParts.ClearSelection();
+            string searchValue = form.tbCandidateSearch.Text;
+
+            if (String.IsNullOrEmpty(searchValue))
+            {
+                return;
+            }
+
+            foreach (DataGridViewRow row in form.dgvCandidateParts.Rows)
+            {
+                if (row.Cells[1].Value != null && row.Cells[1].Value.ToString().Contains(searchValue))
+                {
+                    row.Selected = true;
+                }
+            }
+        }
     }
 }

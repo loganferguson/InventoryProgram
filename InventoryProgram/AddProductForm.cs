@@ -43,10 +43,6 @@ namespace InventoryProgram
             dgvAssociatedParts.DataSource = source;
         }
 
-        private void SearchAssociatedButton_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void CancelAddProduct_Click(object sender, EventArgs e)
         {
@@ -137,6 +133,11 @@ namespace InventoryProgram
                 product.RemoveAssociatedPart(row, this);
             }
             
+        }
+
+        private void SearchCandidateButton_Click(object sender, EventArgs e)
+        {
+            product.LookupCandidatePart(this);
         }
     }
 }

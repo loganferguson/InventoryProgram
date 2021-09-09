@@ -33,7 +33,7 @@
             this.lbCandidateParts = new System.Windows.Forms.Label();
             this.lbAssociatedParts = new System.Windows.Forms.Label();
             this.tbCandidateSearch = new System.Windows.Forms.TextBox();
-            this.SearchAssociatedButton = new System.Windows.Forms.Button();
+            this.SearchCandidateButton = new System.Windows.Forms.Button();
             this.tbProductName = new System.Windows.Forms.TextBox();
             this.tbProductInventory = new System.Windows.Forms.TextBox();
             this.tbProductPrice = new System.Windows.Forms.TextBox();
@@ -67,7 +67,7 @@
             this.dgvCandidateParts.RowHeadersWidth = 51;
             this.dgvCandidateParts.RowTemplate.Height = 24;
             this.dgvCandidateParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCandidateParts.Size = new System.Drawing.Size(653, 164);
+            this.dgvCandidateParts.Size = new System.Drawing.Size(734, 164);
             this.dgvCandidateParts.TabIndex = 0;
             // 
             // dgvAssociatedParts
@@ -82,7 +82,7 @@
             this.dgvAssociatedParts.RowHeadersWidth = 51;
             this.dgvAssociatedParts.RowTemplate.Height = 24;
             this.dgvAssociatedParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAssociatedParts.Size = new System.Drawing.Size(653, 161);
+            this.dgvAssociatedParts.Size = new System.Drawing.Size(734, 161);
             this.dgvAssociatedParts.TabIndex = 1;
             // 
             // lbCandidateParts
@@ -105,20 +105,21 @@
             // 
             // tbCandidateSearch
             // 
-            this.tbCandidateSearch.Location = new System.Drawing.Point(636, 87);
+            this.tbCandidateSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCandidateSearch.Location = new System.Drawing.Point(752, 83);
             this.tbCandidateSearch.Name = "tbCandidateSearch";
-            this.tbCandidateSearch.Size = new System.Drawing.Size(247, 22);
+            this.tbCandidateSearch.Size = new System.Drawing.Size(247, 27);
             this.tbCandidateSearch.TabIndex = 4;
             // 
-            // SearchAssociatedButton
+            // SearchCandidateButton
             // 
-            this.SearchAssociatedButton.Location = new System.Drawing.Point(903, 87);
-            this.SearchAssociatedButton.Name = "SearchAssociatedButton";
-            this.SearchAssociatedButton.Size = new System.Drawing.Size(75, 23);
-            this.SearchAssociatedButton.TabIndex = 5;
-            this.SearchAssociatedButton.Text = "Search";
-            this.SearchAssociatedButton.UseVisualStyleBackColor = true;
-            this.SearchAssociatedButton.Click += new System.EventHandler(this.SearchAssociatedButton_Click);
+            this.SearchCandidateButton.Location = new System.Drawing.Point(1018, 83);
+            this.SearchCandidateButton.Name = "SearchCandidateButton";
+            this.SearchCandidateButton.Size = new System.Drawing.Size(75, 28);
+            this.SearchCandidateButton.TabIndex = 5;
+            this.SearchCandidateButton.Text = "Search";
+            this.SearchCandidateButton.UseVisualStyleBackColor = true;
+            this.SearchCandidateButton.Click += new System.EventHandler(this.SearchCandidateButton_Click);
             // 
             // tbProductName
             // 
@@ -162,6 +163,7 @@
             this.tbProductID.ReadOnly = true;
             this.tbProductID.Size = new System.Drawing.Size(157, 22);
             this.tbProductID.TabIndex = 11;
+            this.tbProductID.TabStop = false;
             // 
             // label1
             // 
@@ -219,9 +221,9 @@
             // 
             // SaveProductButton
             // 
-            this.SaveProductButton.Location = new System.Drawing.Point(104, 463);
+            this.SaveProductButton.Location = new System.Drawing.Point(95, 433);
             this.SaveProductButton.Name = "SaveProductButton";
-            this.SaveProductButton.Size = new System.Drawing.Size(83, 33);
+            this.SaveProductButton.Size = new System.Drawing.Size(83, 42);
             this.SaveProductButton.TabIndex = 18;
             this.SaveProductButton.Text = "Save";
             this.SaveProductButton.UseVisualStyleBackColor = true;
@@ -229,7 +231,7 @@
             // 
             // DeleteAssociatedButton
             // 
-            this.DeleteAssociatedButton.Location = new System.Drawing.Point(864, 574);
+            this.DeleteAssociatedButton.Location = new System.Drawing.Point(959, 576);
             this.DeleteAssociatedButton.Name = "DeleteAssociatedButton";
             this.DeleteAssociatedButton.Size = new System.Drawing.Size(87, 40);
             this.DeleteAssociatedButton.TabIndex = 19;
@@ -239,9 +241,9 @@
             // 
             // CancelAddProduct
             // 
-            this.CancelAddProduct.Location = new System.Drawing.Point(216, 463);
+            this.CancelAddProduct.Location = new System.Drawing.Point(205, 433);
             this.CancelAddProduct.Name = "CancelAddProduct";
-            this.CancelAddProduct.Size = new System.Drawing.Size(81, 33);
+            this.CancelAddProduct.Size = new System.Drawing.Size(81, 42);
             this.CancelAddProduct.TabIndex = 20;
             this.CancelAddProduct.Text = "Cancel";
             this.CancelAddProduct.UseVisualStyleBackColor = true;
@@ -249,7 +251,7 @@
             // 
             // AddCandidateButton
             // 
-            this.AddCandidateButton.Location = new System.Drawing.Point(864, 311);
+            this.AddCandidateButton.Location = new System.Drawing.Point(959, 311);
             this.AddCandidateButton.Name = "AddCandidateButton";
             this.AddCandidateButton.Size = new System.Drawing.Size(87, 37);
             this.AddCandidateButton.TabIndex = 21;
@@ -271,7 +273,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 679);
+            this.ClientSize = new System.Drawing.Size(1138, 679);
             this.Controls.Add(this.lbAddProduct);
             this.Controls.Add(this.AddCandidateButton);
             this.Controls.Add(this.CancelAddProduct);
@@ -289,7 +291,7 @@
             this.Controls.Add(this.tbProductPrice);
             this.Controls.Add(this.tbProductInventory);
             this.Controls.Add(this.tbProductName);
-            this.Controls.Add(this.SearchAssociatedButton);
+            this.Controls.Add(this.SearchCandidateButton);
             this.Controls.Add(this.tbCandidateSearch);
             this.Controls.Add(this.lbAssociatedParts);
             this.Controls.Add(this.lbCandidateParts);
@@ -307,8 +309,7 @@
         #endregion
         private System.Windows.Forms.Label lbCandidateParts;
         private System.Windows.Forms.Label lbAssociatedParts;
-        private System.Windows.Forms.TextBox tbCandidateSearch;
-        private System.Windows.Forms.Button SearchAssociatedButton;
+        private System.Windows.Forms.Button SearchCandidateButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -328,5 +329,6 @@
         public System.Windows.Forms.TextBox tbProductMax;
         public System.Windows.Forms.TextBox tbProductID;
         public System.Windows.Forms.DataGridView dgvAssociatedParts;
+        public System.Windows.Forms.TextBox tbCandidateSearch;
     }
 }

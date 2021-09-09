@@ -67,6 +67,7 @@ namespace InventoryProgram
         {
 
             if (
+                (rdInHouse.Checked == false && rdOutsourced.Checked == false) ||
                 string.IsNullOrEmpty(tbPartName.Text) ||
                 string.IsNullOrEmpty(tbInventory.Text) ||
                 string.IsNullOrEmpty(tbPriceCost.Text) ||

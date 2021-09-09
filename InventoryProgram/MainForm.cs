@@ -15,35 +15,8 @@ namespace InventoryProgram
         public mainForm()
         {
             InitializeComponent();
-            SeedData();
             InitializePartDataGridView();
             InitializeProductDataGridView();
-        }
-
-        public void SeedData()
-        {
-            //Outsourced outPart = new Outsourced
-            //{
-            //    PartID = 1,
-            //    PartName = "Chain",
-            //    InStock = 23,
-            //    Price = 35,
-            //    Min = 10,
-            //    Max = 40,
-            //    CompanyName = "Dobis Company"
-            //};
-            //Inhouse inPart = new Inhouse
-            //{
-            //    PartID = 2,
-            //    PartName = "Wheel",
-            //    InStock = 47,
-            //    Price = 50,
-            //    Min = 10,
-            //    Max = 80,
-            //    MachineID = 440125
-            //};
-            //Inventory.AllParts.Add(outPart);
-            //Inventory.AllParts.Add(inPart);
         }
 
         private void AddPartButton_Click(object sender, EventArgs e)
@@ -57,6 +30,11 @@ namespace InventoryProgram
             var partSource = new BindingSource();
             partSource.DataSource = Inventory.AllParts;
             dgvParts.DataSource = partSource;
+            if(dgvParts.Rows.Count > 0)
+            {
+                ModifyPartButton.Enabled = true;
+                DeletePartButton.Enabled = true;
+            }
         }
 
         public void InitializeProductDataGridView()
@@ -64,6 +42,12 @@ namespace InventoryProgram
             var productSource = new BindingSource();
             productSource.DataSource = Inventory.Products;
             dgvProducts.DataSource = productSource;
+
+            if (dgvProducts.Rows.Count > 0)
+            {
+                ModifyProductButton.Enabled = true;
+                DeleteProductButton.Enabled = true;
+            }
         }
 
         public void SearchPartButton_Click(object sender, EventArgs e)

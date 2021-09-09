@@ -56,7 +56,7 @@
             // 
             // AddCandidateButton
             // 
-            this.AddCandidateButton.Location = new System.Drawing.Point(869, 308);
+            this.AddCandidateButton.Location = new System.Drawing.Point(974, 328);
             this.AddCandidateButton.Name = "AddCandidateButton";
             this.AddCandidateButton.Size = new System.Drawing.Size(87, 37);
             this.AddCandidateButton.TabIndex = 43;
@@ -75,7 +75,7 @@
             // 
             // DeleteAssociatedButton
             // 
-            this.DeleteAssociatedButton.Location = new System.Drawing.Point(869, 571);
+            this.DeleteAssociatedButton.Location = new System.Drawing.Point(974, 593);
             this.DeleteAssociatedButton.Name = "DeleteAssociatedButton";
             this.DeleteAssociatedButton.Size = new System.Drawing.Size(87, 40);
             this.DeleteAssociatedButton.TabIndex = 41;
@@ -192,35 +192,38 @@
             // 
             // SearchAssociatedButton
             // 
-            this.SearchAssociatedButton.Location = new System.Drawing.Point(908, 84);
+            this.SearchAssociatedButton.Location = new System.Drawing.Point(1015, 79);
             this.SearchAssociatedButton.Name = "SearchAssociatedButton";
-            this.SearchAssociatedButton.Size = new System.Drawing.Size(75, 23);
+            this.SearchAssociatedButton.Size = new System.Drawing.Size(75, 27);
             this.SearchAssociatedButton.TabIndex = 27;
             this.SearchAssociatedButton.Text = "Search";
             this.SearchAssociatedButton.UseVisualStyleBackColor = true;
             // 
             // tbCandidateSearch
             // 
-            this.tbCandidateSearch.Location = new System.Drawing.Point(641, 84);
+            this.tbCandidateSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCandidateSearch.Location = new System.Drawing.Point(733, 79);
             this.tbCandidateSearch.Name = "tbCandidateSearch";
-            this.tbCandidateSearch.Size = new System.Drawing.Size(247, 22);
+            this.tbCandidateSearch.Size = new System.Drawing.Size(267, 27);
             this.tbCandidateSearch.TabIndex = 26;
             // 
             // lbAssociatedParts
             // 
             this.lbAssociatedParts.AutoSize = true;
+            this.lbAssociatedParts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAssociatedParts.Location = new System.Drawing.Point(378, 361);
             this.lbAssociatedParts.Name = "lbAssociatedParts";
-            this.lbAssociatedParts.Size = new System.Drawing.Size(114, 17);
+            this.lbAssociatedParts.Size = new System.Drawing.Size(137, 20);
             this.lbAssociatedParts.TabIndex = 25;
             this.lbAssociatedParts.Text = "Associated Parts";
             // 
             // lbCandidateParts
             // 
             this.lbCandidateParts.AutoSize = true;
+            this.lbCandidateParts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCandidateParts.Location = new System.Drawing.Point(378, 90);
             this.lbCandidateParts.Name = "lbCandidateParts";
-            this.lbCandidateParts.Size = new System.Drawing.Size(109, 17);
+            this.lbCandidateParts.Size = new System.Drawing.Size(129, 20);
             this.lbCandidateParts.TabIndex = 24;
             this.lbCandidateParts.Text = "Candidate Parts";
             // 
@@ -236,7 +239,7 @@
             this.dgvAssociatedParts.RowHeadersWidth = 51;
             this.dgvAssociatedParts.RowTemplate.Height = 24;
             this.dgvAssociatedParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAssociatedParts.Size = new System.Drawing.Size(653, 161);
+            this.dgvAssociatedParts.Size = new System.Drawing.Size(725, 185);
             this.dgvAssociatedParts.TabIndex = 23;
             // 
             // dgvCandidateParts
@@ -251,14 +254,14 @@
             this.dgvCandidateParts.RowHeadersWidth = 51;
             this.dgvCandidateParts.RowTemplate.Height = 24;
             this.dgvCandidateParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCandidateParts.Size = new System.Drawing.Size(653, 164);
+            this.dgvCandidateParts.Size = new System.Drawing.Size(725, 187);
             this.dgvCandidateParts.TabIndex = 22;
             // 
             // ModifyProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 694);
+            this.ClientSize = new System.Drawing.Size(1128, 694);
             this.Controls.Add(this.AddCandidateButton);
             this.Controls.Add(this.CancelModAddProduct);
             this.Controls.Add(this.DeleteAssociatedButton);
@@ -282,7 +285,7 @@
             this.Controls.Add(this.dgvAssociatedParts);
             this.Controls.Add(this.dgvCandidateParts);
             this.Name = "ModifyProductForm";
-            this.Text = "ModifyProductForm";
+            this.Text = "Modify Product";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssociatedParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCandidateParts)).EndInit();
             this.ResumeLayout(false);
