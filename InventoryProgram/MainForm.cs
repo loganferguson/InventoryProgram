@@ -22,28 +22,28 @@ namespace InventoryProgram
 
         public void SeedData()
         {
-            Outsourced outPart = new Outsourced
-            {
-                PartID = 1,
-                PartName = "Chain",
-                InStock = 23,
-                Price = 35,
-                Min = 10,
-                Max = 40,
-                CompanyName = "Dobis Company"
-            };
-            Inhouse inPart = new Inhouse
-            {
-                PartID = 2,
-                PartName = "Wheel",
-                InStock = 47,
-                Price = 50,
-                Min = 10,
-                Max = 80,
-                MachineID = 440125
-            };
-            Inventory.AllParts.Add(outPart);
-            Inventory.AllParts.Add(inPart);
+            //Outsourced outPart = new Outsourced
+            //{
+            //    PartID = 1,
+            //    PartName = "Chain",
+            //    InStock = 23,
+            //    Price = 35,
+            //    Min = 10,
+            //    Max = 40,
+            //    CompanyName = "Dobis Company"
+            //};
+            //Inhouse inPart = new Inhouse
+            //{
+            //    PartID = 2,
+            //    PartName = "Wheel",
+            //    InStock = 47,
+            //    Price = 50,
+            //    Min = 10,
+            //    Max = 80,
+            //    MachineID = 440125
+            //};
+            //Inventory.AllParts.Add(outPart);
+            //Inventory.AllParts.Add(inPart);
         }
 
         private void AddPartButton_Click(object sender, EventArgs e)
@@ -157,6 +157,12 @@ namespace InventoryProgram
             }
             Inventory i = new Inventory(this);
             i.RemoveProduct(this);
+        }
+
+        private void ProductSearchButton_Click(object sender, EventArgs e)
+        {
+            Inventory i = new Inventory(this);
+            i.LookupProduct(this);
         }
     }
 }

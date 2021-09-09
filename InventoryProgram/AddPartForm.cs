@@ -48,15 +48,8 @@ namespace InventoryProgram
         // SUBMIT ADD PART FORM //
         private void btSavePart_Click(object sender, EventArgs e)
         {
-
-            if (String.IsNullOrEmpty(tbPartName.Text) ||
-                String.IsNullOrEmpty(tbPriceCost.Text) ||
-                String.IsNullOrEmpty(tbMin.Text) ||
-                String.IsNullOrEmpty(tbMax.Text) ||
-                String.IsNullOrEmpty(tbInventory.Text)
-                )
+            if (!IsValidPart())
             {
-                MessageBox.Show("One or more fields were not completed.");
                 return;
             }
 
@@ -68,6 +61,66 @@ namespace InventoryProgram
         private void btCancelAddPart_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public bool IsValidPart()
+        {
+
+            if (
+                string.IsNullOrEmpty(tbPartName.Text) ||
+                string.IsNullOrEmpty(tbInventory.Text) ||
+                string.IsNullOrEmpty(tbPriceCost.Text) ||
+                string.IsNullOrEmpty(tbMin.Text) ||
+                string.IsNullOrEmpty(tbMax.Text)
+                )
+            {
+                MessageBox.Show("Wait! One or more of the fields was not completed.");
+                return false;
+            }
+            else if (!decimal.TryParse(tbPriceCost.Text, out decimal d))
+            {
+                MessageBox.Show("Wait! The Part price field must be a numerical value.");
+                return false;
+            }
+            else if (!int.TryParse(tbInventory.Text, out int i))
+            {
+                MessageBox.Show("Wait! The inventory field must be a whole number value.");
+                return false;
+            }
+            else if (!int.TryParse(tbMin.Text, out int j))
+            {
+                MessageBox.Show("Wait! The inventory minimum field must be a whole number value.");
+                return false;
+            }
+            else if (!int.TryParse(tbMax.Text, out int k))
+            {
+                MessageBox.Show("Wait! The inventory maximum field must be a whole number value.");
+                return false;
+            }
+            else if (rdInHouse.Checked == true && !int.TryParse(tbMachineID.Text, out int l))
+            {
+                MessageBox.Show("Wait! The Machine ID field must be a whole number value.");
+                return false;
+            }
+            else if (rdOutsourced.Checked == true && String.IsNullOrEmpty(tbCompanyName.Text))
+            {
+                MessageBox.Show("Wait! Outsourced parts must have a company name.");
+                return false;
+            }
+
+            int stock = int.Parse(tbInventory.Text);
+            int max = int.Parse(tbMax.Text);
+            int min = int.Parse(tbMin.Text);
+            if (stock < min || stock > max)
+            {
+                MessageBox.Show("Wait! Product inventory must be greater than \"Min\" and less than \"Max.\"");
+                return false;
+            }
+            if (max < min)
+            {
+                MessageBox.Show("Wait! Maximum cannot be less than minimum.");
+            }
+            return true;
         }
     }
 }

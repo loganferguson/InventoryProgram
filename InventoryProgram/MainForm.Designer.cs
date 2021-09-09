@@ -94,6 +94,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvParts.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvParts.Location = new System.Drawing.Point(23, 80);
+            this.dgvParts.MultiSelect = false;
             this.dgvParts.Name = "dgvParts";
             this.dgvParts.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -171,6 +172,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvProducts.Location = new System.Drawing.Point(23, 324);
+            this.dgvProducts.MultiSelect = false;
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -236,6 +238,7 @@
             this.ProductSearchButton.TabIndex = 12;
             this.ProductSearchButton.Text = "Search";
             this.ProductSearchButton.UseVisualStyleBackColor = true;
+            this.ProductSearchButton.Click += new System.EventHandler(this.ProductSearchButton_Click);
             // 
             // tbProductSearch
             // 
@@ -286,9 +289,9 @@
         private System.Windows.Forms.BindingSource allPartsBindingSource;
         public System.Windows.Forms.DataGridView dgvParts;
         private System.Windows.Forms.Button ProductSearchButton;
-        private System.Windows.Forms.TextBox tbProductSearch;
         public System.Windows.Forms.TextBox tbPartSearch;
         public System.Windows.Forms.DataGridView dgvProducts;
+        public System.Windows.Forms.TextBox tbProductSearch;
     }
 }
 

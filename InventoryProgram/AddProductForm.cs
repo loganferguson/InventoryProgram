@@ -63,7 +63,7 @@ namespace InventoryProgram
 
         private void SaveProductButton_Click(object sender, EventArgs e)
         {
-            if (!IsValid())
+            if (!IsValidProduct())
             {
                 return;
             }
@@ -72,7 +72,7 @@ namespace InventoryProgram
             this.Close();
             mainform.InitializeProductDataGridView();
         }
-        public bool IsValid()
+        public bool IsValidProduct()
         {
             
             if (
