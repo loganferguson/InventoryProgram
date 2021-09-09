@@ -240,6 +240,12 @@ namespace InventoryProgram
         {
             foreach(DataGridViewRow row in main.dgvProducts.SelectedRows)
             {
+                var p = Products.Where(x => x.ProductID == int.Parse(row.Cells[0].Value.ToString())).First();
+                if(p.AssociatedParts.Count > 0)
+                {
+                    MessageBox.Show("This product cannot be deleted until the associated parts are removed.");
+                    return;
+                }
                 main.dgvProducts.Rows.Remove(row);
             }
             main.InitializeProductDataGridView();

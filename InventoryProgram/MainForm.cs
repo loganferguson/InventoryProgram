@@ -18,13 +18,6 @@ namespace InventoryProgram
             InitializePartDataGridView();
             InitializeProductDataGridView();
         }
-
-        private void AddPartButton_Click(object sender, EventArgs e)
-        {
-            AddPartForm form = new AddPartForm(this);
-            form.Show();
-        }
-
         public void InitializePartDataGridView()
         {
             var partSource = new BindingSource();
@@ -36,7 +29,6 @@ namespace InventoryProgram
                 DeletePartButton.Enabled = true;
             }
         }
-
         public void InitializeProductDataGridView()
         {
             var productSource = new BindingSource();
@@ -50,17 +42,17 @@ namespace InventoryProgram
             }
         }
 
+        //PART BUTTON CLICKS:
+        private void AddPartButton_Click(object sender, EventArgs e)
+        {
+            AddPartForm form = new AddPartForm(this);
+            form.Show();
+        }
+
         public void SearchPartButton_Click(object sender, EventArgs e)
         {
             Inventory i = new Inventory(this);
             i.LookupPart(this);
-        }
-
-        private void AddProductButton_Click(object sender, EventArgs e)
-        {
-            AddProductForm form = new AddProductForm(this);
-            
-            form.Show();
         }
 
         private void DeletePartButton_Click(object sender, EventArgs e)
@@ -109,6 +101,15 @@ namespace InventoryProgram
                 }
             }
             modForm.Show();
+        }
+
+
+        // PRODUCT BUTTON CLICKS:
+        private void AddProductButton_Click(object sender, EventArgs e)
+        {
+            AddProductForm form = new AddProductForm(this);
+            
+            form.Show();
         }
 
         private void ModifyProductButton_Click(object sender, EventArgs e)
