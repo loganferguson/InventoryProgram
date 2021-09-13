@@ -143,5 +143,36 @@ namespace InventoryProgram
                 }
             }
         }
+
+
+        //Unused Methods:
+
+        public void addAssociatedPart(Part p)
+        {
+            addProductForm.dgvAssociatedParts.Rows.Add(p.PartID, p.PartName, p.InStock, p.Price, p.Min, p.Max);
+        }
+
+        public bool removeAssociatedPart(int index)
+        {
+            var p = AssociatedParts[index];
+            AssociatedParts.Remove(p);
+            return true;
+        }
+
+        public Part lookupAssociatedPart(int id)
+        {
+            string search = addProductForm.tbCandidateSearch.Text;
+            foreach (DataGridViewRow row in addProductForm.dgvCandidateParts.Rows)
+            {
+                if (row.Cells[1].Value.ToString() == search)
+                {
+                    row.Selected = true;
+
+                }
+            }
+            var p = Inventory.AllParts.Where(x => x.PartID == id).First();
+            return p;
+        }
+
     }
 }

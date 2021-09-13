@@ -131,7 +131,7 @@ namespace InventoryProgram
                 var outPart = part as Outsourced;
                 outPart.PartName = m.tbModPartName.Text;
                 outPart.InStock = int.Parse(m.tbModPartInventory.Text);
-                outPart.Price = int.Parse(m.tbModPartPrice.Text);
+                outPart.Price = decimal.Parse(m.tbModPartPrice.Text);
                 outPart.Min = int.Parse(m.tbModPartMin.Text);
                 outPart.Max = int.Parse(m.tbModPartMax.Text);
                 outPart.CompanyName = m.tbModCompanyName.Text;
@@ -269,5 +269,80 @@ namespace InventoryProgram
                 }
             }
         }
+
+        //Unused Methods:
+
+        public void addProduct(Product p)
+        {
+            Products.Add(p);
+        }
+        public bool removeProduct(int id)
+        {
+            var p = Products.Where(x => x.ProductID == id).First();
+            Products.Remove(p);
+            return true;
+        }
+
+        public Product lookupProduct(int id)
+        {
+            string search = mainform.tbProductSearch.Text;
+            foreach(DataGridViewRow row in mainform.dgvProducts.Rows)
+            {
+                if(row.Cells[1].Value.ToString() == search)
+                {
+                    row.Selected = true;
+                    
+                }
+            }
+            Product p = Products.Where(x => x.ProductID == id).First();
+            return p;
+        }
+
+        public void updateProduct(int id, Product p)
+        {
+            var prod = Products.Where(x => x.ProductID == id).First();
+
+            prod.ProductName = p.ProductName;
+            prod.Price = p.Price;
+            prod.InStock = p.InStock;
+            prod.Min = p.Min;
+            prod.Max = p.Max;
+        }
+        public void addPart(Part p)
+        {
+            AllParts.Add(p);
+        }
+
+        public bool deletePart(Part p)
+        {
+            AllParts.Remove(p);
+            return true;
+        }
+        public Part lookupPart(int id)
+        {
+            string search = mainform.tbPartSearch.Text;
+            foreach (DataGridViewRow row in mainform.dgvParts.Rows)
+            {
+                if (row.Cells[1].Value.ToString() == search)
+                {
+                    row.Selected = true;
+
+                }
+            }
+            var p = AllParts.Where(x => x.PartID == id).First();
+            return p;
+        }
+        public void updatePart(int id, Part p)
+        {
+            var part = AllParts.Where(x => x.PartID == id).First();
+
+            part.PartName = p.PartName;
+            part.Price = p.Price;
+            part.InStock = p.InStock;
+            part.Min = p.Min;
+            part.Max = p.Max;
+        }
+
+
     }
 }

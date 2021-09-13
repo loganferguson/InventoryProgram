@@ -149,5 +149,10 @@ namespace InventoryProgram
             Inventory i = new Inventory(this);
             i.LookupProduct(this);
         }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
